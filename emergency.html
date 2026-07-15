@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StadiumGenie | Emergency Center</title>
+
+<link rel="stylesheet" href="css/emergency.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+<div class="logo">
+🏟 StadiumGenie
+</div>
+
+<ul>
+
+<li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+<li><a href="map.html">🗺 Map</a></li>
+
+<li><a href="chatbot.html">🤖 AI Assistant</a></li>
+
+<li><a href="parking.html">🚗 Parking</a></li>
+
+<li><a href="food.html">🍔 Food Finder</a></li>
+
+<li><a href="schedule.html">📅 Schedule</a></li>
+
+</ul>
+
+</nav>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<h1>🚑 Emergency Assistance Center</h1>
+
+<p>
+
+Get immediate access to medical services, emergency exits and help desks.
+
+</p>
+
+<div class="live-status">
+
+🟢 Emergency Services Online
+
+</div>
+
+</header>
+
+<!-- ================= MAIN CONTAINER ================= -->
+
+<div class="main-container">
+
+<!-- LEFT SIDE -->
+
+<div class="emergency-container">
+
+<!-- Medical -->
+
+<div class="emergency-card">
+
+<img src="images/hospital.jpg" alt="Medical Center">
+
+<h2>🏥 Medical Center</h2>
+
+<p><strong>📍 Location:</strong> Beside Gate 3</p>
+
+<p><strong>⏱ Response Time:</strong> 2 Minutes</p>
+
+<p><strong>👨‍⚕ Status:</strong> Available</p>
+
+<div class="button-group">
+
+<button onclick="showEmergency('medical')">
+
+📋 Details
+
+</button>
+
+<button onclick="navigateEmergency('Gate 3')">
+
+🧭 Navigate
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Emergency Exit -->
+
+<div class="emergency-card">
+
+<img src="images/gate.jpg" alt="Emergency Exit">
+
+<h2>🚪 Emergency Exit</h2>
+
+<p><strong>📍 Location:</strong> Near Every Gate</p>
+
+<p><strong>🚶 Fastest Exit:</strong> Gate 2</p>
+
+<p><strong>🟢 Status:</strong> Open</p>
+
+<div class="button-group">
+
+<button onclick="showEmergency('exit')">
+
+📋 Details
+
+</button>
+
+<button onclick="navigateEmergency('Gate 2')">
+
+🧭 Navigate
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Help Desk -->
+
+<div class="emergency-card">
+
+<img src="images/hospital.jpg" alt="Help Desk">
+
+<h2>☎ Emergency Help Desk</h2>
+
+<p><strong>📞 Helpline:</strong> +91 1800 123 456</p>
+
+<p><strong>🕒 Availability:</strong> 24 × 7</p>
+
+<p><strong>👮 Staff:</strong> On Duty</p>
+
+<div class="button-group">
+
+<button onclick="showEmergency('help')">
+
+📋 Details
+
+</button>
+
+<button onclick="callHelp()">
+
+📞 Call
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+
+<div id="emergencyBox">
+
+<h2>🚑 Emergency Information</h2>
+
+<img src="images/hospital.jpg" class="info-image" alt="Emergency">
+
+<p>
+
+Select an emergency service to view:
+
+<br><br>
+
+🏥 Medical Information
+
+<br>
+
+🚪 Emergency Exits
+
+<br>
+
+☎ Contact Numbers
+
+<br>
+
+🧭 Navigation Assistance
+
+<br>
+
+⚡ Safety Instructions
+
+</p>
+
+<button onclick="refreshEmergency()">
+
+🔄 Refresh Status
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+© 2026 StadiumGenie | AI Smart Stadium Assistant
+
+</footer>
+
+<script src="js/emergency.js"></script>
+
+</body>
+
+</html>

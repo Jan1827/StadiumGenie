@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StadiumGenie Dashboard</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= Navigation ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🏟 StadiumGenie
+    </div>
+
+    <ul>
+
+        <li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+        <li><a href="map.html">📍 Stadium Map</a></li>
+
+        <li><a href="chatbot.html">🤖 AI Assistant</a></li>
+
+        <li><a href="parking.html">🚗 Parking</a></li>
+
+        <li><a href="food.html">🍔 Food Finder</a></li>
+
+        <li><a href="schedule.html">📅 Schedule</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- ================= Live Date & Time ================= -->
+
+<div class="top-info">
+
+<div id="currentDate"></div>
+
+<div id="currentTime"></div>
+
+</div>
+
+<!-- ================= Header ================= -->
+
+<header>
+
+<h1>🏟 StadiumGenie Dashboard</h1>
+
+<p>AI Smart Stadium Assistant for FIFA World Cup 2026</p>
+
+</header>
+
+<!-- ================= Match Status ================= -->
+
+<div class="status-container">
+
+<div class="status-card">
+
+<h3>⚽ Match</h3>
+
+<p>India 🇮🇳 vs Brazil 🇧🇷</p>
+
+</div>
+
+<div class="status-card">
+
+<h3>🕢 Kickoff</h3>
+
+<p>7:30 PM</p>
+
+</div>
+
+<div class="status-card">
+
+<h3>🌤 Weather</h3>
+
+<p id="weatherText">Loading...</p>
+
+</div>
+
+<div class="status-card">
+
+<h3>👥 Crowd</h3>
+
+<p id="crowdText">Loading...</p>
+
+</div>
+
+</div>
+
+<!-- ================= Quick Access ================= -->
+
+<section>
+
+<h2 class="section-title">
+
+⚡ Quick Access
+
+</h2>
+
+<div class="cards">
+
+<div class="card" onclick="location.href='map.html'">
+
+<div class="icon">📍</div>
+
+<h3>Stadium Map</h3>
+
+<p>Find Gates & Seats</p>
+
+</div>
+
+<div class="card" onclick="location.href='chatbot.html'">
+
+<div class="icon">🤖</div>
+
+<h3>AI Assistant</h3>
+
+<p>Ask Stadium Questions</p>
+
+</div>
+
+<div class="card" onclick="location.href='parking.html'">
+
+<div class="icon">🚗</div>
+
+<h3>Parking</h3>
+
+<p>Live Parking Status</p>
+
+</div>
+
+<div class="card" onclick="location.href='food.html'">
+
+<div class="icon">🍔</div>
+
+<h3>Food Finder</h3>
+
+<p>Restaurants & Cafés</p>
+
+</div>
+
+<div class="card" onclick="location.href='emergency.html'">
+
+<div class="icon">🚑</div>
+
+<h3>Emergency</h3>
+
+<p>24×7 Medical Help</p>
+
+</div>
+
+<div class="card" onclick="location.href='schedule.html'">
+
+<div class="icon">📅</div>
+
+<h3>Match Schedule</h3>
+
+<p>Today's Fixtures</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= Live Stadium ================= -->
+
+<section>
+
+<h2 class="section-title">
+
+📡 Live Stadium Information
+
+</h2>
+
+<div class="status-container">
+
+<div class="status-card">
+
+<h3>🚗 Parking Available</h3>
+
+<p>220 Spaces</p>
+
+</div>
+
+<div class="status-card">
+
+<h3>🚻 Restrooms</h3>
+
+<p>18 Locations</p>
+
+</div>
+
+<div class="status-card">
+
+<h3>🍔 Food Courts</h3>
+
+<p>12 Open</p>
+
+</div>
+
+<div class="status-card">
+
+<h3>🚑 Medical Centers</h3>
+
+<p>3 Active</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= Footer ================= -->
+
+<footer>
+
+<p>© 2026 StadiumGenie | AI Smart Stadium Assistant</p>
+
+</footer>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

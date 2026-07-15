@@ -1,0 +1,259 @@
+/* ===============================
+   Reset & Global
+================================ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    color:#111;
+}
+
+/* ===============================
+   Navigation
+================================ */
+
+nav{
+    background:#111;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 50px;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#d9d9d9;
+}
+
+/* ===============================
+   Header
+================================ */
+
+header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+header h1{
+    font-size:58px;
+    margin-bottom:15px;
+}
+
+header p{
+    font-size:22px;
+    color:#555;
+}
+
+.live-status{
+    display:inline-block;
+    margin-top:25px;
+    background:#111;
+    color:white;
+    padding:14px 30px;
+    border-radius:40px;
+    font-weight:600;
+}
+
+/* ===============================
+   Main Layout
+================================ */
+
+.main-container{
+    width:92%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:35px;
+    margin-bottom:50px;
+}
+
+/* ===============================
+   Food Cards
+================================ */
+
+.food-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.food-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    transition:.35s;
+}
+
+.food-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+}
+
+.food-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.food-card h2{
+    padding:20px 20px 10px;
+    font-size:28px;
+}
+
+.food-card p{
+    padding:0 20px;
+    margin:10px 0;
+    color:#444;
+    font-size:17px;
+}
+
+.open{
+    color:#1d8f3b;
+    font-weight:700;
+}
+
+/* ===============================
+   Buttons
+================================ */
+
+.button-group{
+    display:flex;
+    gap:10px;
+    padding:20px;
+}
+
+.button-group button{
+    flex:1;
+}
+
+button{
+    padding:13px;
+    border:none;
+    border-radius:12px;
+    background:#111;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#333;
+    transform:scale(1.03);
+}
+
+/* ===============================
+   Menu Box
+================================ */
+
+#menuBox{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    text-align:center;
+    min-height:700px;
+}
+
+#menuBox h2{
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+#menuBox p{
+    font-size:20px;
+    line-height:1.8;
+    color:#444;
+}
+
+.info-image{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+#menuBox button{
+    width:100%;
+    margin-top:25px;
+}
+
+/* ===============================
+   Footer
+================================ */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:25px;
+    font-size:18px;
+}
+
+/* ===============================
+   Responsive
+================================ */
+
+@media(max-width:1100px){
+
+.main-container{
+    grid-template-columns:1fr;
+}
+
+#menuBox{
+    min-height:auto;
+}
+
+}
+
+@media(max-width:900px){
+
+nav{
+    flex-direction:column;
+    gap:20px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+header h1{
+    font-size:42px;
+}
+
+.food-container{
+    grid-template-columns:1fr;
+}
+
+.button-group{
+    flex-direction:column;
+}
+
+}

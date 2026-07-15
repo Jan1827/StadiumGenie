@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StadiumGenie | Smart Food Finder</title>
+
+<link rel="stylesheet" href="css/food.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+<div class="logo">
+🏟 StadiumGenie
+</div>
+
+<ul>
+
+<li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+<li><a href="map.html">🗺 Map</a></li>
+
+<li><a href="chatbot.html">🤖 AI Assistant</a></li>
+
+<li><a href="parking.html">🚗 Parking</a></li>
+
+<li><a href="schedule.html">📅 Schedule</a></li>
+
+</ul>
+
+</nav>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<h1>🍔 Smart Food Finder</h1>
+
+<p>
+
+Find the best food courts, cafés and restaurants around the stadium.
+
+</p>
+
+<div class="live-status">
+
+🟢 Live Restaurant Status
+
+</div>
+
+</header>
+
+<!-- ================= MAIN CONTAINER ================= -->
+
+<div class="main-container">
+
+<!-- LEFT SIDE -->
+
+<div class="food-container">
+
+<!-- ================= FOOD COURT A ================= -->
+
+<div class="food-card">
+
+<img src="images/food.jpg" alt="Food Court A">
+
+<h2>🍔 Food Court A</h2>
+
+<p><strong>📍 Location:</strong> Near Gate 2</p>
+
+<p><strong>⭐ Rating:</strong> 4.8 / 5</p>
+
+<p><strong>⏱ Waiting:</strong> 5 Minutes</p>
+
+<p><strong>💰 Price:</strong> ₹₹</p>
+
+<p class="open">🟢 Open</p>
+
+<div class="button-group">
+
+<button onclick="showMenu('A')">
+
+📋 View Menu
+
+</button>
+
+<button onclick="navigateFood('Gate 2')">
+
+🧭 Navigate
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ================= FOOD COURT B ================= -->
+
+<div class="food-card">
+
+<img src="images/food.jpg" alt="Food Court B">
+
+<h2>🍕 Food Court B</h2>
+
+<p><strong>📍 Location:</strong> Near Gate 4</p>
+
+<p><strong>⭐ Rating:</strong> 4.7 / 5</p>
+
+<p><strong>⏱ Waiting:</strong> 8 Minutes</p>
+
+<p><strong>💰 Price:</strong> ₹₹₹</p>
+
+<p class="open">🟢 Open</p>
+
+<div class="button-group">
+
+<button onclick="showMenu('B')">
+
+📋 View Menu
+
+</button>
+
+<button onclick="navigateFood('Gate 4')">
+
+🧭 Navigate
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ================= CAFE ================= -->
+
+<div class="food-card">
+
+<img src="images/food.jpg" alt="Cafe">
+
+<h2>☕ Café Corner</h2>
+
+<p><strong>📍 Location:</strong> Main Plaza</p>
+
+<p><strong>⭐ Rating:</strong> 4.5 / 5</p>
+
+<p><strong>⏱ Waiting:</strong> 2 Minutes</p>
+
+<p><strong>💰 Price:</strong> ₹</p>
+
+<p class="open">🟢 Open</p>
+
+<div class="button-group">
+
+<button onclick="showMenu('Cafe')">
+
+📋 View Menu
+
+</button>
+
+<button onclick="navigateFood('Main Plaza')">
+
+🧭 Navigate
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= RIGHT SIDE ================= -->
+
+<div id="menuBox">
+
+<h2>🍽 Restaurant Information</h2>
+
+<img src="images/food.jpg" class="info-image" alt="Food">
+
+<p>
+
+Select a restaurant to see:
+
+<br><br>
+
+🍕 Full Menu
+
+<br>
+
+⭐ Ratings
+
+<br>
+
+💰 Price Range
+
+<br>
+
+⏱ Waiting Time
+
+<br>
+
+📍 Exact Location
+
+</p>
+
+<button onclick="refreshRestaurants()">
+
+🔄 Refresh Status
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+© 2026 StadiumGenie | AI Smart Stadium Assistant
+
+</footer>
+
+<script src="js/food.js"></script>
+
+</body>
+
+</html>

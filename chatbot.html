@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StadiumGenie | AI Assistant</title>
+
+    <link rel="stylesheet" href="css/chatbot.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            🏟 StadiumGenie
+        </div>
+
+        <ul>
+
+            <li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+            <li><a href="map.html">🗺 Map</a></li>
+
+            <li><a href="parking.html">🚗 Parking</a></li>
+
+            <li><a href="food.html">🍔 Food Finder</a></li>
+
+            <li><a href="schedule.html">📅 Schedule</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>🤖 AI Stadium Assistant</h1>
+
+        <p>
+            Ask anything about gates, parking, food courts, metro,
+            emergency services or the match schedule.
+        </p>
+
+    </header>
+
+    <!-- Chat Section -->
+
+    <section class="chat-section">
+
+        <!-- Left -->
+
+        <div class="chat-container">
+
+            <div class="chat-header">
+
+                🤖 StadiumGenie AI
+
+            </div>
+
+            <div id="chatBox">
+
+                <div class="bot-message">
+
+                    👋 Welcome!
+
+                    <br><br>
+
+                    Try asking:
+
+                    <ul>
+
+                        <li>Where is Gate 4?</li>
+
+                        <li>Nearest parking?</li>
+
+                        <li>Food near Gate 2?</li>
+
+                        <li>Medical center location?</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <form class="input-area"
+                  onsubmit="event.preventDefault(); askAI();">
+
+                <input
+                    type="text"
+                    id="question"
+                    placeholder="Ask your question..."
+                    autocomplete="off">
+
+                <button type="button"
+                        onclick="startVoice()">
+
+                    🎤
+
+                </button>
+
+                <button type="submit">
+
+                    Send
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Right -->
+
+        <div class="info-panel">
+
+            <img src="images/stadium.jpg" alt="AI Assistant">
+
+            <h2>AI Smart Guide</h2>
+
+            <p>
+
+                The assistant can answer questions about:
+
+            </p>
+
+            <ul>
+
+                <li>🏟 Stadium Gates</li>
+
+                <li>🚗 Parking Availability</li>
+
+                <li>🍔 Food Courts</li>
+
+                <li>🚇 Metro Station</li>
+
+                <li>🏥 Emergency Services</li>
+
+                <li>📅 Match Schedule</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        © 2026 StadiumGenie | AI Smart Stadium Assistant
+
+    </footer>
+
+    <script type="module" src="js/chatbot.js"></script>
+
+</body>
+
+</html>

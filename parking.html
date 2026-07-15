@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StadiumGenie | Smart Parking Finder</title>
+
+<link rel="stylesheet" href="css/parking.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+<div class="logo">
+🏟 StadiumGenie
+</div>
+
+<ul>
+
+<li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+<li><a href="map.html">🗺 Map</a></li>
+
+<li><a href="chatbot.html">🤖 AI Assistant</a></li>
+
+<li><a href="food.html">🍔 Food Finder</a></li>
+
+<li><a href="schedule.html">📅 Schedule</a></li>
+
+</ul>
+
+</nav>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<h1>🚗 Smart Parking Finder</h1>
+
+<p>
+Find the nearest parking area with real-time availability.
+</p>
+
+<div class="live-status">
+🟢 Live Parking Status Updated
+</div>
+
+</header>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="main-container">
+
+<!-- LEFT SIDE -->
+
+<div class="parking-container">
+
+<!-- Parking A -->
+
+<div class="parking-card">
+
+<img src="images/parking.jpg" alt="Parking A">
+
+<h2>🅿 Parking Zone A</h2>
+
+<p><strong>Location:</strong> North Entrance</p>
+
+<p><strong>Distance:</strong> 350 meters</p>
+
+<p><strong>Walk:</strong> 5 Minutes</p>
+
+<p><strong>Capacity:</strong> 150 Vehicles</p>
+
+<p class="available">🟢 120 Spaces Available</p>
+
+<div class="progress">
+
+<div class="progress-green"></div>
+
+</div>
+
+<div class="button-group">
+
+<button onclick="showDetails('Parking Zone A')">
+
+📋 Details
+
+</button>
+
+<button onclick="navigateTo('Parking Zone A')">
+
+🧭 Navigate
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Parking B -->
+
+<div class="parking-card">
+
+<img src="images/parking.jpg" alt="Parking B">
+
+<h2>🅿 Parking Zone B</h2>
+
+<p><strong>Location:</strong> South Entrance</p>
+
+<p><strong>Distance:</strong> 550 meters</p>
+
+<p><strong>Walk:</strong> 8 Minutes</p>
+
+<p><strong>Capacity:</strong> 100 Vehicles</p>
+
+<p class="limited">🟡 65 Spaces Available</p>
+
+<div class="progress">
+
+<div class="progress-orange"></div>
+
+</div>
+
+<div class="button-group">
+
+<button onclick="showDetails('Parking Zone B')">
+
+📋 Details
+
+</button>
+
+<button onclick="navigateTo('Parking Zone B')">
+
+🧭 Navigate
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Parking C -->
+
+<div class="parking-card">
+
+<img src="images/parking.jpg" alt="Parking C">
+
+<h2>🅿 Parking Zone C</h2>
+
+<p><strong>Location:</strong> East Entrance</p>
+
+<p><strong>Distance:</strong> 900 meters</p>
+
+<p><strong>Walk:</strong> 12 Minutes</p>
+
+<p><strong>Capacity:</strong> 120 Vehicles</p>
+
+<p class="full">🔴 Parking Full</p>
+
+<div class="progress">
+
+<div class="progress-red"></div>
+
+</div>
+
+<div class="button-group">
+
+<button onclick="showDetails('Parking Zone C')">
+
+📋 Details
+
+</button>
+
+<button onclick="navigateTo('Parking Zone C')">
+
+🧭 Navigate
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+
+<div id="infoBox">
+
+<h2>ℹ Parking Information</h2>
+
+<img src="images/parking.jpg" class="info-image" alt="Parking">
+
+<p>
+
+Select a parking zone to see:
+
+<br><br>
+
+📍 Exact Location
+
+<br>
+
+🚗 Available Spaces
+
+<br>
+
+🚶 Walking Distance
+
+<br>
+
+🕒 Estimated Time
+
+<br>
+
+🧭 Navigation Assistance
+
+</p>
+
+<button onclick="refreshParking()">
+
+🔄 Refresh Status
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+© 2026 StadiumGenie | AI Smart Stadium Assistant
+
+</footer>
+
+<script src="js/parking.js"></script>
+
+</body>
+
+</html>

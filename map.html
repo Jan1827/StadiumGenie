@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Interactive Stadium Map | StadiumGenie</title>
+
+<link rel="stylesheet" href="css/map.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= Navigation ================= -->
+
+<nav>
+
+<div class="logo">
+🏟 StadiumGenie
+</div>
+
+<ul>
+<li><a href="dashboard.html">🏠 Dashboard</a></li>
+<li><a href="chatbot.html">🤖 AI Assistant</a></li>
+<li><a href="parking.html">🚗 Parking</a></li>
+<li><a href="food.html">🍔 Food Finder</a></li>
+<li><a href="schedule.html">📅 Schedule</a></li>
+</ul>
+
+</nav>
+
+<!-- ================= Header ================= -->
+
+<header>
+
+<h1>🗺 Interactive Stadium Map</h1>
+
+<p>
+Click any location below to explore gates, parking, food courts,
+metro station and emergency services.
+</p>
+
+<a href="dashboard.html" class="back-btn">
+← Back to Dashboard
+</a>
+
+</header>
+
+<!-- ================= Main Content ================= -->
+
+<div class="map-container">
+
+<!-- Left Section -->
+
+<div class="stadium-image-container">
+
+<h2>🏟 Football Stadium</h2>
+
+<img
+src="images/stadium.jpg"
+class="stadium-image"
+alt="Football Stadium">
+
+<!-- Location Cards -->
+
+<div class="location-grid">
+
+<div class="location-card" onclick="showInfo('Gate 1')">
+
+<img src="images/gate.jpg" alt="Gate">
+
+<h3>🚪 Gate 1</h3>
+
+</div>
+
+<div class="location-card" onclick="showInfo('Gate 2')">
+
+<img src="images/gate.jpg" alt="Gate">
+
+<h3>⭐ Gate 2</h3>
+
+</div>
+
+<div class="location-card" onclick="showInfo('Gate 3')">
+
+<img src="images/gate.jpg" alt="Gate">
+
+<h3>🚪 Gate 3</h3>
+
+</div>
+
+<div class="location-card" onclick="showInfo('Gate 4')">
+
+<img src="images/gate.jpg" alt="Gate">
+
+<h3>🚪 Gate 4</h3>
+
+</div>
+
+<div class="location-card" onclick="showInfo('Parking A')">
+
+<img src="images/parking.jpg" alt="Parking">
+
+<h3>🚗 Parking A</h3>
+
+</div>
+
+<div class="location-card" onclick="showInfo('Parking B')">
+
+<img src="images/parking.jpg" alt="Parking">
+
+<h3>🚗 Parking B</h3>
+
+</div>
+
+<div class="location-card" onclick="showInfo('Food Court A')">
+
+<img src="images/food.jpg" alt="Food">
+
+<h3>🍔 Food Court A</h3>
+
+</div>
+
+<div class="location-card" onclick="showInfo('Food Court B')">
+
+<img src="images/food.jpg" alt="Food">
+
+<h3>🍕 Food Court B</h3>
+
+</div>
+
+<div class="location-card" onclick="showInfo('Medical')">
+
+<img src="images/hospital.jpg" alt="Medical">
+
+<h3>🏥 Medical Center</h3>
+
+</div>
+
+<div class="location-card" onclick="showInfo('Metro')">
+
+<img src="images/metro.jpg" alt="Metro">
+
+<h3>🚇 Metro Station</h3>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= Right Section ================= -->
+
+<div id="infoBox">
+
+<h2>📍 Location Information</h2>
+
+<img
+src="images/stadium.jpg"
+class="info-image"
+alt="Location">
+
+<p>
+
+Click any location card to view detailed information.
+
+<br><br>
+
+The selected location image and description will appear here.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ================= Footer ================= -->
+
+<footer>
+
+© 2026 StadiumGenie | AI Smart Stadium Assistant
+
+</footer>
+
+<script src="js/map.js"></script>
+
+</body>
+
+</html>

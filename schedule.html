@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StadiumGenie | Match Schedule</title>
+
+<link rel="stylesheet" href="css/schedule.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= Navigation ================= -->
+
+<nav>
+
+<div class="logo">
+🏟 StadiumGenie
+</div>
+
+<ul>
+
+<li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+<li><a href="map.html">🗺 Map</a></li>
+
+<li><a href="chatbot.html">🤖 AI Assistant</a></li>
+
+<li><a href="parking.html">🚗 Parking</a></li>
+
+<li><a href="food.html">🍔 Food Finder</a></li>
+
+<li><a href="emergency.html">🚑 Emergency</a></li>
+
+</ul>
+
+</nav>
+
+<!-- ================= Header ================= -->
+
+<header>
+
+<h1>📅 FIFA World Cup 2026 Match Schedule</h1>
+
+<p>
+
+View today's fixtures, kickoff times, ticket availability and stadium information.
+
+</p>
+
+<div class="live-status">
+
+🟢 Live Tournament Updates
+
+</div>
+
+</header>
+
+<!-- ================= Main Container ================= -->
+
+<div class="main-container">
+
+<!-- Match Cards -->
+
+<div class="schedule-container">
+
+<!-- Match 1 -->
+
+<div class="match-card">
+
+<img src="images/stadium.jpg" alt="Demo Stadium">
+
+<h2>🇮🇳 India vs 🇧🇷 Brazil</h2>
+
+<p><strong>📍 Venue:</strong> Demo Stadium</p>
+
+<p><strong>🕢 Kickoff:</strong> 7:30 PM</p>
+
+<p><strong>🌤 Weather:</strong> 29°C Sunny</p>
+
+<p><strong>👥 Crowd:</strong> Moderate</p>
+
+<p><strong>🎫 Tickets:</strong> Available</p>
+
+<div class="button-group">
+
+<button onclick="showMatch('india')">
+
+📋 Details
+
+</button>
+
+<button onclick="navigateMatch('Demo Stadium')">
+
+🧭 Navigate
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Match 2 -->
+
+<div class="match-card">
+
+<img src="images/stadium.jpg" alt="Arena Alpha">
+
+<h2>🇦🇷 Argentina vs 🇫🇷 France</h2>
+
+<p><strong>📍 Venue:</strong> Arena Alpha</p>
+
+<p><strong>🕘 Kickoff:</strong> 9:00 PM</p>
+
+<p><strong>🌤 Weather:</strong> 24°C Cloudy</p>
+
+<p><strong>👥 Crowd:</strong> High</p>
+
+<p><strong>🎫 Tickets:</strong> Sold Out</p>
+
+<div class="button-group">
+
+<button onclick="showMatch('argentina')">
+
+📋 Details
+
+</button>
+
+<button onclick="navigateMatch('Arena Alpha')">
+
+🧭 Navigate
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Match 3 -->
+
+<div class="match-card">
+
+<img src="images/stadium.jpg" alt="National Arena">
+
+<h2>🇪🇸 Spain vs 🇩🇪 Germany</h2>
+
+<p><strong>📍 Venue:</strong> National Arena</p>
+
+<p><strong>🕕 Kickoff:</strong> 6:00 PM</p>
+
+<p><strong>🌤 Weather:</strong> 26°C Clear</p>
+
+<p><strong>👥 Crowd:</strong> Low</p>
+
+<p><strong>🎫 Tickets:</strong> Available</p>
+
+<div class="button-group">
+
+<button onclick="showMatch('spain')">
+
+📋 Details
+
+</button>
+
+<button onclick="navigateMatch('National Arena')">
+
+🧭 Navigate
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Information Panel -->
+
+<div id="matchBox">
+
+<h2>🏆 Match Information</h2>
+
+<img src="images/stadium.jpg" class="info-image" alt="Match">
+
+<p>
+
+Select a match to view:
+
+<br><br>
+
+⚽ Team Details
+
+<br>
+
+🕒 Kickoff Time
+
+<br>
+
+🎫 Ticket Status
+
+<br>
+
+🌤 Weather Forecast
+
+<br>
+
+📍 Venue Information
+
+<br>
+
+🧭 Navigation Assistance
+
+</p>
+
+<button onclick="refreshMatches()">
+
+🔄 Refresh Schedule
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ================= Footer ================= -->
+
+<footer>
+
+© 2026 StadiumGenie | AI Smart Stadium Assistant
+
+</footer>
+
+<script src="js/schedule.js"></script>
+
+</body>
+
+</html>
