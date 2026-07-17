@@ -1,234 +1,150 @@
-<div align="center">
-
+::: {align="center"}
 # 🏟 StadiumGenie
+
 ### AI Smart Stadium Assistant for FIFA World Cup 2026
 
-An AI-powered web application that enhances the stadium experience through smart navigation, AI assistance, parking guidance, food discovery, emergency support, and live match information.
-
-![HTML](https://img.shields.io/badge/HTML-5-orange?style=for-the-badge&logo=html5)
-![CSS](https://img.shields.io/badge/CSS-3-blue?style=for-the-badge&logo=css3)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge&logo=javascript)
-![Node.js](https://img.shields.io/badge/Node.js-Express-green?style=for-the-badge&logo=node.js)
-![Jest](https://img.shields.io/badge/Tested%20With-Jest-red?style=for-the-badge&logo=jest)
-![Responsive](https://img.shields.io/badge/Responsive-Yes-success?style=for-the-badge)
-![Accessibility](https://img.shields.io/badge/Accessibility-ARIA-blueviolet?style=for-the-badge)
-![Hackathon](https://img.shields.io/badge/Hack2Skill-Virtual%20PromptWar-success?style=for-the-badge)
-
-</div>
-
----
-
-# 🌐 Live Demo
-
-**🔗 Live Application:** Coming Soon
-
-
----
-
-# 📖 Project Overview
-
-**StadiumGenie** is an AI-powered Smart Stadium Assistant designed to improve the visitor experience during major sporting events such as the **FIFA World Cup 2026**.
-
-The application enables visitors to easily navigate the stadium, locate facilities, discover food courts, find parking, access emergency services, view match schedules, and receive instant assistance through an AI-powered chatbot.
-
-The project demonstrates how Artificial Intelligence and smart navigation can simplify stadium operations while enhancing safety, accessibility, and visitor convenience.
-
----
-
-# 🎯 Problem Statement
-
-Large stadiums often present challenges for visitors:
-
-- Difficulty locating gates and seating
-- Parking confusion
-- Long queues at food courts
-- Limited accessibility information
-- Difficulty reaching emergency services
-- Lack of real-time stadium guidance
-
-These challenges can negatively impact the overall fan experience.
-
----
-
-# 💡 Solution
-
-StadiumGenie provides a centralized AI-powered digital assistant that allows visitors to:
-
-- Navigate the stadium easily
-- Locate gates and parking areas
-- Discover nearby food courts
-- Access emergency assistance
-- View match schedules
-- Receive AI-powered stadium guidance
-- Improve the overall match-day experience
-
----
-
-# 🌟 Key Highlights
-
-- 🤖 AI Stadium Assistant
-- 🎤 Voice Recognition
-- 🔊 AI Text-to-Speech Responses
-- 🗺 Interactive Stadium Navigation
-- 🚗 Smart Parking Finder
-- 🍔 Food Discovery System
-- 🚑 Emergency Assistance
-- 📅 Match Schedule
-- 📱 Fully Responsive Design
-- ♿ Accessibility Features
-- 🧪 Unit Tested using Jest
-
----
-
-# ✨ Features
-
-## 🏠 Home Page
-
-- Modern Landing Page
-- Stadium Overview
-- Live Statistics
-- Quick Navigation
-
----
-
-## 📊 Dashboard
-
-Central control panel providing quick access to:
-
-- Stadium Map
-- AI Assistant
-- Smart Parking
-- Food Finder
-- Emergency Center
-- Match Schedule
-
----
-
-## 🗺 Interactive Stadium Map
-
-Explore:
-
-- Gate 1
-- Gate 2
-- Gate 3
-- Gate 4
-- Parking Zones
-- Food Courts
-- Metro Station
-- Medical Center
-
-Displays:
-
-- Images
-- Location Information
-- Facility Details
-
----
-
-## 🤖 AI Assistant
-
-Supports questions about:
-
-- Stadium Gates
-- Parking
-- Food Courts
-- Metro Station
-- Medical Services
-- Accessibility
-- Navigation
-- Match Information
-
-Includes:
-
-- Voice Recognition
-- AI Responses
-- Speech Synthesis
-
----
-
-## 🚗 Smart Parking Finder
-
-Features:
-
-- Live Parking Status
-- Distance
-- Walking Time
-- Recommended Parking
-- Navigation
-
----
-
-## 🍔 Food Finder
-
-Displays:
-
-- Restaurants
-- Menus
-- Ratings
-- Waiting Time
-- Navigation
-
----
-
-## 🚑 Emergency Center
-
-Quick access to:
-
-- Medical Centers
-- Emergency Exits
-- Help Desk
-- Emergency Navigation
-
----
-
-## 📅 Match Schedule
-
-Displays:
-
-- Fixtures
-- Kickoff Time
-- Weather
-- Crowd Status
-- Ticket Availability
-- Countdown
-
----
-
-# 🛠 Technology Stack
-
-| Technology | Purpose |
-|------------|----------|
-| HTML5 | Page Structure |
-| CSS3 | Styling |
-| JavaScript (ES6) | Client-side Logic |
-| Node.js | Backend Runtime |
-| Express.js | Server |
-| Fetch API | API Communication |
-| Web Speech API | Voice Recognition |
-| Speech Synthesis API | AI Voice |
-| Jest | Unit Testing |
-| Google Fonts | Typography |
-
----
-
-# 📂 Project Structure
-
+```{=html}
+<p>
 ```
+An AI-powered Smart Stadium Assistant that combines
+`<b>`{=html}Generative AI`</b>`{=html}, voice interaction, intelligent
+navigation, parking guidance, food discovery, emergency support, and
+live match information.
+```{=html}
+</p>
+```
+```{=html}
+<p>
+```
+`<img src="https://img.shields.io/badge/HTML-5-orange?style=for-the-badge&logo=html5"/>`{=html}
+`<img src="https://img.shields.io/badge/CSS-3-blue?style=for-the-badge&logo=css3"/>`{=html}
+`<img src="https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge&logo=javascript"/>`{=html}
+`<img src="https://img.shields.io/badge/Node.js-Express-green?style=for-the-badge&logo=node.js"/>`{=html}
+`<img src="https://img.shields.io/badge/Jest-Tested-red?style=for-the-badge&logo=jest"/>`{=html}
+`<img src="https://img.shields.io/badge/Generative_AI-OpenRouter-black?style=for-the-badge"/>`{=html}
+`<img src="https://img.shields.io/badge/Responsive-Yes-success?style=for-the-badge"/>`{=html}
+`<img src="https://img.shields.io/badge/Accessibility-ARIA-blueviolet?style=for-the-badge"/>`{=html}
+
+```{=html}
+</p>
+```
+```{=html}
+<p>
+```
+`<a href="https://github.com/Jan1827/StadiumGenie">`{=html}
+`<img src="https://img.shields.io/badge/View-GitHub-181717?style=for-the-badge&logo=github"/>`{=html}
+`</a>`{=html}
+```{=html}
+</p>
+```
+:::
+
+
+------------------------------------------------------------------------
+
+## 📖 Overview
+
+StadiumGenie is an AI-powered Smart Stadium Assistant built for the
+**FIFA World Cup 2026**. It improves the match-day experience through
+intelligent navigation, AI assistance, parking guidance, food discovery,
+emergency support, and accessibility.
+
+------------------------------------------------------------------------
+
+## 📑 Table of Contents
+
+-   Features
+-   AI Integration
+-   System Architecture
+-   Technology Stack
+-   Project Structure
+-   Installation
+-   Backend API
+-   Testing
+-   Security
+-   Screenshots
+-   Accessibility
+-   Future Enhancements
+-   Hackathon
+-   Developer
+
+------------------------------------------------------------------------
+
+## ✨ Features
+
+-   🤖 AI Stadium Assistant
+-   🗺 Interactive Stadium Map
+-   🚗 Smart Parking Finder
+-   🍔 Food Discovery
+-   🚑 Emergency Center
+-   📅 Match Schedule
+-   🎤 Voice Recognition
+-   🔊 Text-to-Speech
+-   📱 Responsive Design
+-   ♿ Accessibility Support
+
+------------------------------------------------------------------------
+
+## 🤖 Generative AI
+
+The chatbot uses a **hybrid architecture**.
+
+1.  Searches the **local stadium knowledge base**.
+2.  If no answer exists, the request is sent to **OpenRouter LLM**.
+3.  The AI-generated response is returned to the user.
+
+### AI Capabilities
+
+-   Natural language conversations
+-   OpenRouter LLM
+-   Local knowledge fallback
+-   Voice input
+-   Speech synthesis
+-   Multilingual support
+
+------------------------------------------------------------------------
+
+## 🏗 System Architecture
+
+``` text
+Browser
+   │
+Frontend (HTML/CSS/JavaScript)
+   │
+Express.js Backend
+   ├── Local Knowledge Base
+   └── OpenRouter AI
+            │
+      AI Response
+```
+
+------------------------------------------------------------------------
+
+## 🛠 Technology Stack
+
+  Technology           Purpose
+  -------------------- ---------------------
+  HTML5                Structure
+  CSS3                 Styling
+  JavaScript           Frontend
+  Node.js              Backend
+  Express.js           Server
+  OpenRouter           Generative AI
+  Jest                 Testing
+  Supertest            Backend API Testing
+  Helmet               Security
+  Express Rate Limit   Rate Limiting
+
+------------------------------------------------------------------------
+
+## 📂 Project Structure
+
+``` text
 StadiumGenie/
-
-│
-
 ├── css/
-
 ├── images/
-
 ├── js/
-
 ├── tests/
-
-│
-
-├── index.html
 ├── dashboard.html
 ├── chatbot.html
 ├── map.html
@@ -236,204 +152,131 @@ StadiumGenie/
 ├── food.html
 ├── emergency.html
 ├── schedule.html
-
-│
-
 ├── server.js
+├── jest.setup.js
 ├── package.json
-├── package-lock.json
 ├── README.md
-└── LICENSE
 ```
 
----
+------------------------------------------------------------------------
 
-# 🚀 Installation
+## 🚀 Installation
 
-Clone the repository
-
-```bash
+``` bash
 git clone https://github.com/Jan1827/StadiumGenie.git
-```
-
-Navigate into the project
-
-```bash
 cd StadiumGenie
-```
-
-Install dependencies
-
-```bash
 npm install
+npm start
 ```
 
-Start the server
+Open:
 
-```bash
-node server.js
-```
-
-Open your browser and visit
-
-```
+``` text
 http://localhost:3000
 ```
 
----
+------------------------------------------------------------------------
 
-# 🧪 Running Tests
+## 📡 Backend API
 
-Run all tests
+### GET /
 
-```bash
+Returns server status.
+
+### POST /chat
+
+``` json
+{
+  "message":"Where is Gate 4?",
+  "language":"English"
+}
+```
+
+------------------------------------------------------------------------
+
+## 🧪 Testing
+
+``` bash
 npm test
 ```
 
-Generate test coverage
+Current Results
 
-```bash
-npm test -- --coverage
-```
+-   ✅ 6 Test Suites Passed
+-   ✅ 15 Tests Passed
 
-The project includes automated unit tests using **Jest**.
+------------------------------------------------------------------------
 
----
+## 🔒 Security
 
-# 📸 Screenshots
+-   Helmet
+-   Express Rate Limit
+-   Input Validation
+-   Request Size Limits
+-   dotenv
+-   Timeout Handling
 
-## 🏠 Home Page
+------------------------------------------------------------------------
 
-![Home](ss/home1.png)
+## 📸 Screenshots
 
----
+Place your screenshots here:
 
-## 📊 Dashboard
+-   Home
+-   Dashboard
+-   Map
+-   AI Assistant
+-   Parking
+-   Food
+-   Emergency
+-   Schedule
 
-![Dashboard](ss/dashboard1.png)
+------------------------------------------------------------------------
 
----
+## ♿ Accessibility
 
-## 🗺 Interactive Map
+-   Semantic HTML
+-   ARIA Labels
+-   Keyboard Navigation
+-   Screen Reader Support
+-   Responsive Layout
 
-![Map](ss/map1.png)
+------------------------------------------------------------------------
 
----
+## 🔮 Future Enhancements
 
-## 🤖 AI Assistant
+-   Google Maps
+-   Live Parking API
+-   QR Navigation
+-   AI Route Optimization
+-   Push Notifications
+-   Ticket Booking
+-   Offline Support
 
-![AI Assistant](ss/ai.png)
+------------------------------------------------------------------------
 
----
+## 🏆 Hackathon
 
-## 🚗 Smart Parking
+**Hack2Skill Virtual PromptWar**
 
-![Parking](ss/parking1.png)
+Category: **Smart Stadiums & Tournament Operations**
 
----
+------------------------------------------------------------------------
 
-## 🍔 Food Finder
-
-![Food](ss/food1.png)
-
----
-
-## 🚑 Emergency Center
-
-![Emergency](ss/emergency1.png)
-
----
-
-## 📅 Match Schedule
-
-![Schedule](ss/schedule1.png)
-
----
-
-# ♿ Accessibility
-
-StadiumGenie follows modern accessibility best practices.
-
-- Semantic HTML
-- ARIA Labels
-- Keyboard Navigation
-- Screen Reader Support
-- Image Alt Text
-- Responsive Design
-
----
-
-# 🚧 Challenges Faced
-
-- Designing an intuitive stadium navigation system
-- Building multiple interactive modules
-- Implementing AI chatbot communication
-- Supporting voice recognition
-- Maintaining responsive layouts
-- Improving accessibility and usability
-- Organizing scalable frontend code
-
----
-
-# 🔮 Future Enhancements
-
-- Google Maps Integration
-- Live Parking API
-- QR Code Navigation
-- AI Route Optimization
-- Live Crowd Detection
-- Push Notifications
-- Multi-language Support
-- Ticket Booking Integration
-- Offline Support
-- Personalized AI Recommendations
-
----
-
-# 🎯 Use Cases
-
-- FIFA World Cup
-- Football Stadiums
-- Cricket Stadiums
-- Olympic Venues
-- Concert Arenas
-- Exhibition Centers
-- Large Public Events
-
----
-
-# 📈 Benefits
-
-- Faster Navigation
-- Reduced Waiting Time
-- Better Crowd Management
-- Improved Visitor Experience
-- Easier Facility Discovery
-- Enhanced Emergency Response
-- Better Accessibility
-
----
-
-# 👩‍💻 Developed By
+## 👩‍💻 Developer
 
 **Janhavi Ojha**
 
-Developed for the **Hack2Skill Virtual PromptWar** challenge.
+------------------------------------------------------------------------
 
----
+## 📜 License
 
-# 📜 License
+MIT License
 
-This project is licensed under the **MIT License**.
+------------------------------------------------------------------------
 
----
+::: {align="center"}
+### ⭐ If you enjoyed this project, please consider giving it a Star!
 
-<div align="center">
-
-### ⭐ If you found this project interesting, consider giving it a Star!
-
-Thank you for exploring **StadiumGenie**.
-
-Let's make stadium experiences smarter, safer, and more enjoyable with AI.
-
-</div>
+Made with ❤️ for smarter stadium experiences.
+:::
