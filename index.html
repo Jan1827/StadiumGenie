@@ -18,9 +18,9 @@
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
 
-<nav>
+
+<nav aria-label="Main Navigation">
 
 <div class="logo">
 🏟 StadiumGenie
@@ -28,33 +28,37 @@
 
 <ul>
 
-<li><a href="index.html">🏠 Home</a></li>
+<li><a href="index.html" aria-label="Home">🏠 Home</a></li>
 
-<li><a href="dashboard.html">📊 Dashboard</a></li>
+<li><a href="dashboard.html" aria-label="Dashboard">📊 Dashboard</a></li>
 
-<li><a href="map.html">🗺 Map</a></li>
+<li><a href="map.html" aria-label="Interactive Stadium Map">🗺 Map</a></li>
 
-<li><a href="chatbot.html">🤖 AI Assistant</a></li>
+<li><a href="chatbot.html" aria-label="AI Assistant">🤖 AI Assistant</a></li>
 
-<li><a href="parking.html">🚗 Parking</a></li>
+<li><a href="parking.html" aria-label="Parking Finder">🚗 Parking</a></li>
 
-<li><a href="food.html">🍔 Food</a></li>
+<li><a href="food.html" aria-label="Food Finder">🍔 Food</a></li>
 
-<li><a href="emergency.html">🚑 Emergency</a></li>
+<li><a href="emergency.html" aria-label="Emergency Assistance">🚑 Emergency</a></li>
 
-<li><a href="schedule.html">📅 Schedule</a></li>
+<li><a href="schedule.html" aria-label="Match Schedule">📅 Schedule</a></li>
 
 </ul>
 
 </nav>
 
-<!-- ================= HERO SECTION ================= -->
+<main>
 
-<section class="hero">
+
+
+<section class="hero" aria-labelledby="hero-title">
 
 <div class="hero-text">
 
-<h1>Experience the Future of Smart Stadiums</h1>
+<h1 id="hero-title">
+Experience the Future of Smart Stadiums
+</h1>
 
 <p>
 
@@ -64,7 +68,9 @@ Navigate the stadium effortlessly, discover food courts, locate parking, access 
 
 </p>
 
-<button onclick="location.href='dashboard.html'">
+<button
+onclick="location.href='dashboard.html'"
+aria-label="Open Stadium Dashboard">
 
 🚀 Enter Dashboard
 
@@ -74,17 +80,21 @@ Navigate the stadium effortlessly, discover food courts, locate parking, access 
 
 <div class="hero-image">
 
-<img src="images/stadium.jpg" alt="Stadium">
+<img
+src="images/stadium.jpg"
+alt="Football stadium with seating, floodlights and playing field">
 
 </div>
 
 </section>
 
-<!-- ================= LIVE STATUS ================= -->
 
-<section class="live-section">
 
-<h2>📡 Live Stadium Status</h2>
+<section class="live-section" aria-labelledby="status-title">
+
+<h2 id="status-title">
+📡 Live Stadium Status
+</h2>
 
 <div class="status-grid">
 
@@ -124,11 +134,13 @@ Navigate the stadium effortlessly, discover food courts, locate parking, access 
 
 </section>
 
-<!-- ================= FEATURES ================= -->
 
-<section class="features">
 
-<h2>🏆 Smart Stadium Features</h2>
+<section class="features" aria-labelledby="feature-title">
+
+<h2 id="feature-title">
+🏆 Smart Stadium Features
+</h2>
 
 <div class="cards">
 
@@ -137,9 +149,7 @@ Navigate the stadium effortlessly, discover food courts, locate parking, access 
 <h3>🤖 AI Assistant</h3>
 
 <p>
-
 Get instant answers about stadium facilities, directions, parking and services.
-
 </p>
 
 </div>
@@ -149,9 +159,7 @@ Get instant answers about stadium facilities, directions, parking and services.
 <h3>🗺 Interactive Stadium Map</h3>
 
 <p>
-
 Explore gates, parking, metro stations, food courts and medical centers.
-
 </p>
 
 </div>
@@ -161,9 +169,7 @@ Explore gates, parking, metro stations, food courts and medical centers.
 <h3>🚗 Smart Parking</h3>
 
 <p>
-
 Find available parking spaces and navigate directly to your parking zone.
-
 </p>
 
 </div>
@@ -173,9 +179,7 @@ Find available parking spaces and navigate directly to your parking zone.
 <h3>🍔 Food Finder</h3>
 
 <p>
-
 Discover nearby restaurants, cafés and food courts with menus.
-
 </p>
 
 </div>
@@ -185,9 +189,7 @@ Discover nearby restaurants, cafés and food courts with menus.
 <h3>🚑 Emergency Center</h3>
 
 <p>
-
 Locate emergency exits, medical services and help desks instantly.
-
 </p>
 
 </div>
@@ -197,9 +199,7 @@ Locate emergency exits, medical services and help desks instantly.
 <h3>📅 Match Schedule</h3>
 
 <p>
-
 View today's fixtures, kickoff times, venues and ticket availability.
-
 </p>
 
 </div>
@@ -209,9 +209,7 @@ View today's fixtures, kickoff times, venues and ticket availability.
 <h3>♿ Accessibility</h3>
 
 <p>
-
 Locate wheelchair-friendly entrances, elevators and accessible seating.
-
 </p>
 
 </div>
@@ -221,9 +219,7 @@ Locate wheelchair-friendly entrances, elevators and accessible seating.
 <h3>🌤 Live Updates</h3>
 
 <p>
-
 Monitor weather, crowd levels and important announcements in real time.
-
 </p>
 
 </div>
@@ -232,11 +228,13 @@ Monitor weather, crowd levels and important announcements in real time.
 
 </section>
 
-<!-- ================= CALL TO ACTION ================= -->
 
-<section class="cta">
 
-<h2>Ready to Explore the Stadium?</h2>
+<section class="cta" aria-labelledby="cta-title">
+
+<h2 id="cta-title">
+Ready to Explore the Stadium?
+</h2>
 
 <p>
 
@@ -244,7 +242,9 @@ Launch StadiumGenie and experience a smarter way to navigate the stadium.
 
 </p>
 
-<button onclick="location.href='dashboard.html'">
+<button
+onclick="location.href='dashboard.html'"
+aria-label="Open Dashboard">
 
 Open Dashboard
 
@@ -252,7 +252,9 @@ Open Dashboard
 
 </section>
 
-<!-- ================= FOOTER ================= -->
+</main>
+
+
 
 <footer>
 

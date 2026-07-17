@@ -6,7 +6,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>StadiumGenie | Match Schedule</title>
+<title>StadiumGenie | FIFA World Cup 2026 Match Schedule</title>
+
+<meta name="description"
+content="View FIFA World Cup 2026 match schedule, kickoff times, ticket availability, venue information and live updates with StadiumGenie.">
 
 <link rel="stylesheet" href="css/schedule.css">
 
@@ -20,7 +23,7 @@
 
 <!-- ================= Navigation ================= -->
 
-<nav>
+<nav aria-label="Main Navigation">
 
 <div class="logo">
 🏟 StadiumGenie
@@ -64,19 +67,23 @@ View today's fixtures, kickoff times, ticket availability and stadium informatio
 
 </header>
 
-<!-- ================= Main Container ================= -->
+<!-- ================= Main ================= -->
+
+<main>
 
 <div class="main-container">
 
-<!-- Match Cards -->
+<!-- ================= Match Cards ================= -->
 
-<div class="schedule-container">
+<section class="schedule-container" aria-label="Today's Match Schedule">
 
 <!-- Match 1 -->
 
-<div class="match-card">
+<article class="match-card">
 
-<img src="images/stadium.jpg" alt="Demo Stadium">
+<img
+src="images/stadium.jpg"
+alt="Demo Stadium hosting India vs Brazil">
 
 <h2>🇮🇳 India vs 🇧🇷 Brazil</h2>
 
@@ -92,13 +99,17 @@ View today's fixtures, kickoff times, ticket availability and stadium informatio
 
 <div class="button-group">
 
-<button onclick="showMatch('india')">
+<button
+onclick="showMatch('india')"
+aria-label="View India versus Brazil match details">
 
 📋 Details
 
 </button>
 
-<button onclick="navigateMatch('Demo Stadium')">
+<button
+onclick="navigateMatch('Demo Stadium')"
+aria-label="Navigate to Demo Stadium">
 
 🧭 Navigate
 
@@ -106,13 +117,15 @@ View today's fixtures, kickoff times, ticket availability and stadium informatio
 
 </div>
 
-</div>
+</article>
 
 <!-- Match 2 -->
 
-<div class="match-card">
+<article class="match-card">
 
-<img src="images/stadium.jpg" alt="Arena Alpha">
+<img
+src="images/stadium.jpg"
+alt="Arena Alpha hosting Argentina vs France">
 
 <h2>🇦🇷 Argentina vs 🇫🇷 France</h2>
 
@@ -128,13 +141,17 @@ View today's fixtures, kickoff times, ticket availability and stadium informatio
 
 <div class="button-group">
 
-<button onclick="showMatch('argentina')">
+<button
+onclick="showMatch('argentina')"
+aria-label="View Argentina versus France match details">
 
 📋 Details
 
 </button>
 
-<button onclick="navigateMatch('Arena Alpha')">
+<button
+onclick="navigateMatch('Arena Alpha')"
+aria-label="Navigate to Arena Alpha">
 
 🧭 Navigate
 
@@ -142,13 +159,15 @@ View today's fixtures, kickoff times, ticket availability and stadium informatio
 
 </div>
 
-</div>
+</article>
 
 <!-- Match 3 -->
 
-<div class="match-card">
+<article class="match-card">
 
-<img src="images/stadium.jpg" alt="National Arena">
+<img
+src="images/stadium.jpg"
+alt="National Arena hosting Spain vs Germany">
 
 <h2>🇪🇸 Spain vs 🇩🇪 Germany</h2>
 
@@ -164,13 +183,17 @@ View today's fixtures, kickoff times, ticket availability and stadium informatio
 
 <div class="button-group">
 
-<button onclick="showMatch('spain')">
+<button
+onclick="showMatch('spain')"
+aria-label="View Spain versus Germany match details">
 
 📋 Details
 
 </button>
 
-<button onclick="navigateMatch('National Arena')">
+<button
+onclick="navigateMatch('National Arena')"
+aria-label="Navigate to National Arena">
 
 🧭 Navigate
 
@@ -178,17 +201,24 @@ View today's fixtures, kickoff times, ticket availability and stadium informatio
 
 </div>
 
-</div>
+</article>
 
-</div>
+</section>
 
-<!-- Information Panel -->
+<!-- ================= Information Panel ================= -->
 
-<div id="matchBox">
+<aside
+id="matchBox"
+role="region"
+aria-live="polite"
+aria-label="Match Information Panel">
 
 <h2>🏆 Match Information</h2>
 
-<img src="images/stadium.jpg" class="info-image" alt="Match">
+<img
+src="images/stadium.jpg"
+class="info-image"
+alt="Selected match information">
 
 <p>
 
@@ -220,21 +250,29 @@ Select a match to view:
 
 </p>
 
-<button onclick="refreshMatches()">
+<button
+onclick="refreshMatches()"
+aria-label="Refresh Match Schedule">
 
 🔄 Refresh Schedule
 
 </button>
 
-</div>
+</aside>
 
 </div>
+
+</main>
 
 <!-- ================= Footer ================= -->
 
 <footer>
 
+<p>
+
 © 2026 StadiumGenie | AI Smart Stadium Assistant
+
+</p>
 
 </footer>
 

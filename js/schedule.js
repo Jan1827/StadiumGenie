@@ -1,146 +1,131 @@
+// =====================================
+// Match Data
+// =====================================
+
 const matches = {
 
-    "india":{
-
-        title:"🇮🇳 India vs 🇧🇷 Brazil",
-
-        image:"images/stadium.jpg",
-
-        info:`
-        <b>📍 Venue:</b> Demo Stadium<br><br>
-
-        🕢 Kickoff: 7:30 PM<br>
-
-        🌤 Weather: 29°C Sunny<br>
-
-        👥 Crowd: Moderate<br>
-
-        🎫 Tickets: Available<br>
-
-        ⏳ Countdown: 2 Hours 15 Minutes<br>
-
-        🏆 Group Stage Match
+    india: {
+        title: "🇮🇳 India vs 🇧🇷 Brazil",
+        image: "images/stadium.jpg",
+        info: `
+            <b>📍 Venue:</b> Demo Stadium<br><br>
+            🕢 Kickoff: 7:30 PM<br>
+            🌤 Weather: 29°C Sunny<br>
+            👥 Crowd: Moderate<br>
+            🎫 Tickets: Available<br>
+            ⏳ Countdown: 2 Hours 15 Minutes<br>
+            🏆 Group Stage Match
         `
     },
 
-    "argentina":{
-
-        title:"🇦🇷 Argentina vs 🇫🇷 France",
-
-        image:"images/stadium.jpg",
-
-        info:`
-        <b>📍 Venue:</b> Arena Alpha<br><br>
-
-        🕘 Kickoff: 9:00 PM<br>
-
-        🌤 Weather: 24°C Cloudy<br>
-
-        👥 Crowd: High<br>
-
-        🎫 Tickets: Sold Out<br>
-
-        ⏳ Countdown: 3 Hours 45 Minutes<br>
-
-        🏆 Group Stage Match
+    argentina: {
+        title: "🇦🇷 Argentina vs 🇫🇷 France",
+        image: "images/stadium.jpg",
+        info: `
+            <b>📍 Venue:</b> Arena Alpha<br><br>
+            🕘 Kickoff: 9:00 PM<br>
+            🌤 Weather: 24°C Cloudy<br>
+            👥 Crowd: High<br>
+            🎫 Tickets: Sold Out<br>
+            ⏳ Countdown: 3 Hours 45 Minutes<br>
+            🏆 Group Stage Match
         `
     },
 
-    "spain":{
-
-        title:"🇪🇸 Spain vs 🇩🇪 Germany",
-
-        image:"images/stadium.jpg",
-
-        info:`
-        <b>📍 Venue:</b> National Arena<br><br>
-
-        🕕 Kickoff: 6:00 PM<br>
-
-        🌤 Weather: 26°C Clear<br>
-
-        👥 Crowd: Low<br>
-
-        🎫 Tickets: Available<br>
-
-        ⏳ Countdown: 1 Hour 10 Minutes<br>
-
-        🏆 Group Stage Match
+    spain: {
+        title: "🇪🇸 Spain vs 🇩🇪 Germany",
+        image: "images/stadium.jpg",
+        info: `
+            <b>📍 Venue:</b> National Arena<br><br>
+            🕕 Kickoff: 6:00 PM<br>
+            🌤 Weather: 26°C Clear<br>
+            👥 Crowd: Low<br>
+            🎫 Tickets: Available<br>
+            ⏳ Countdown: 1 Hour 10 Minutes<br>
+            🏆 Group Stage Match
         `
     }
 
 };
 
 // =====================================
+// Cached Element
+// =====================================
+
+const matchBox = document.getElementById("matchBox");
+
+// =====================================
 // Show Match Details
 // =====================================
 
-function showMatch(team){
+function showMatch(team) {
 
     const data = matches[team];
 
-    document.getElementById("matchBox").innerHTML = `
+    if (!data || !matchBox) return;
 
-        <img src="${data.image}" class="info-image">
+    matchBox.innerHTML = `
+        <img
+            src="${data.image}"
+            class="info-image"
+            alt="${data.title}">
 
         <h2>${data.title}</h2>
 
         <p>${data.info}</p>
 
         <button onclick="navigateMatch('${data.title}')">
-
             🧭 Navigate to Stadium
-
         </button>
-
     `;
 
 }
 
 // =====================================
-// Navigate
+// Navigation Information
 // =====================================
 
-function navigateMatch(destination){
+function navigateMatch(destination) {
 
-    document.getElementById("matchBox").innerHTML = `
+    if (!matchBox) return;
 
-        <img src="images/stadium.jpg" class="info-image">
+    matchBox.innerHTML = `
+        <img
+            src="images/stadium.jpg"
+            class="info-image"
+            alt="Stadium Navigation">
 
         <h2>🧭 Navigation</h2>
 
         <p>
 
-        <strong>Destination:</strong> ${destination}
+            <strong>Destination:</strong> ${destination}
 
-        <br><br>
+            <br><br>
 
-        📏 Distance: 450 meters
+            📏 Distance: 450 meters
 
-        <br>
+            <br>
 
-        🚶 Walking Time: 6 Minutes
+            🚶 Walking Time: 6 Minutes
 
-        <br>
+            <br>
 
-        🚇 Nearest Metro: Gate 1 Station
+            🚇 Nearest Metro: Gate 1 Station
 
-        <br>
+            <br>
 
-        🚗 Parking Recommended: Zone A
+            🚗 Recommended Parking: Zone A
 
-        <br><br>
+            <br><br>
 
-        ✅ Route is clear.
+            ✅ Route is clear.
 
         </p>
 
         <button onclick="refreshMatches()">
-
             🔄 Refresh Schedule
-
         </button>
-
     `;
 
 }
@@ -149,7 +134,7 @@ function navigateMatch(destination){
 // Refresh Schedule
 // =====================================
 
-function refreshMatches(){
+function refreshMatches() {
 
     const messages = [
 
@@ -165,8 +150,22 @@ function refreshMatches(){
 
     ];
 
-    const random = Math.floor(Math.random() * messages.length);
+    const randomIndex = Math.floor(Math.random() * messages.length);
 
-    alert(messages[random]);
+    alert(messages[randomIndex]);
+
+}
+
+// =====================================
+// Export for Jest
+// =====================================
+
+if (typeof module !== "undefined") {
+
+    module.exports = {
+        showMatch,
+        navigateMatch,
+        refreshMatches
+    };
 
 }

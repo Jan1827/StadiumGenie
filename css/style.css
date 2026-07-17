@@ -479,3 +479,16 @@ nav ul{
 }
 
 }
+button:focus,
+a:focus{
+outline:3px solid #FFD54F;
+outline-offset:4px;
+}
+
+button{
+transition:0.3s;
+}
+
+html{
+scroll-behavior:smooth;
+}

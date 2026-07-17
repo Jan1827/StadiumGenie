@@ -6,7 +6,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>StadiumGenie | Smart Parking Finder</title>
+<meta name="description"
+content="Find available parking spaces around the stadium with live parking status, walking distance and navigation assistance.">
+
+<title>🚗 StadiumGenie | Smart Parking Finder</title>
 
 <link rel="stylesheet" href="css/parking.css">
 
@@ -18,9 +21,11 @@
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
+<a href="#mainContent" class="skip-link">Skip to Main Content</a>
 
-<nav>
+<!-- Navigation -->
+
+<nav aria-label="Main Navigation">
 
 <div class="logo">
 🏟 StadiumGenie
@@ -42,8 +47,6 @@
 
 </nav>
 
-<!-- ================= HEADER ================= -->
-
 <header>
 
 <h1>🚗 Smart Parking Finder</h1>
@@ -52,25 +55,28 @@
 Find the nearest parking area with real-time availability.
 </p>
 
-<div class="live-status">
+<div class="live-status" aria-live="polite">
 🟢 Live Parking Status Updated
 </div>
 
 </header>
 
-<!-- ================= MAIN CONTENT ================= -->
+<main id="mainContent">
 
 <div class="main-container">
 
-<!-- LEFT SIDE -->
+<section class="parking-container" aria-labelledby="parkingHeading">
 
-<div class="parking-container">
+<h2 id="parkingHeading" class="visually-hidden">
+Parking Zones
+</h2>
 
 <!-- Parking A -->
 
-<div class="parking-card">
+<article class="parking-card">
 
-<img src="images/parking.jpg" alt="Parking A">
+<img src="images/parking.jpg"
+alt="Parking Zone A">
 
 <h2>🅿 Parking Zone A</h2>
 
@@ -92,13 +98,17 @@ Find the nearest parking area with real-time availability.
 
 <div class="button-group">
 
-<button onclick="showDetails('Parking Zone A')">
+<button
+onclick="showDetails('Parking Zone A')"
+aria-label="View details for Parking Zone A">
 
 📋 Details
 
 </button>
 
-<button onclick="navigateTo('Parking Zone A')">
+<button
+onclick="navigateTo('Parking Zone A')"
+aria-label="Navigate to Parking Zone A">
 
 🧭 Navigate
 
@@ -106,13 +116,14 @@ Find the nearest parking area with real-time availability.
 
 </div>
 
-</div>
+</article>
 
 <!-- Parking B -->
 
-<div class="parking-card">
+<article class="parking-card">
 
-<img src="images/parking.jpg" alt="Parking B">
+<img src="images/parking.jpg"
+alt="Parking Zone B">
 
 <h2>🅿 Parking Zone B</h2>
 
@@ -134,13 +145,17 @@ Find the nearest parking area with real-time availability.
 
 <div class="button-group">
 
-<button onclick="showDetails('Parking Zone B')">
+<button
+onclick="showDetails('Parking Zone B')"
+aria-label="View details for Parking Zone B">
 
 📋 Details
 
 </button>
 
-<button onclick="navigateTo('Parking Zone B')">
+<button
+onclick="navigateTo('Parking Zone B')"
+aria-label="Navigate to Parking Zone B">
 
 🧭 Navigate
 
@@ -148,13 +163,14 @@ Find the nearest parking area with real-time availability.
 
 </div>
 
-</div>
+</article>
 
 <!-- Parking C -->
 
-<div class="parking-card">
+<article class="parking-card">
 
-<img src="images/parking.jpg" alt="Parking C">
+<img src="images/parking.jpg"
+alt="Parking Zone C">
 
 <h2>🅿 Parking Zone C</h2>
 
@@ -176,13 +192,17 @@ Find the nearest parking area with real-time availability.
 
 <div class="button-group">
 
-<button onclick="showDetails('Parking Zone C')">
+<button
+onclick="showDetails('Parking Zone C')"
+aria-label="View details for Parking Zone C">
 
 📋 Details
 
 </button>
 
-<button onclick="navigateTo('Parking Zone C')">
+<button
+onclick="navigateTo('Parking Zone C')"
+aria-label="Navigate to Parking Zone C">
 
 🧭 Navigate
 
@@ -190,17 +210,20 @@ Find the nearest parking area with real-time availability.
 
 </div>
 
-</div>
+</article>
 
-</div>
+</section>
 
-<!-- RIGHT SIDE -->
+<!-- Information Panel -->
 
-<div id="infoBox">
+<aside id="infoBox" aria-labelledby="infoHeading">
 
-<h2>ℹ Parking Information</h2>
+<h2 id="infoHeading">ℹ Parking Information</h2>
 
-<img src="images/parking.jpg" class="info-image" alt="Parking">
+<img
+src="images/parking.jpg"
+class="info-image"
+alt="Parking Information">
 
 <p>
 
@@ -228,21 +251,27 @@ Select a parking zone to see:
 
 </p>
 
-<button onclick="refreshParking()">
+<button
+onclick="refreshParking()"
+aria-label="Refresh parking availability">
 
 🔄 Refresh Status
 
 </button>
 
-</div>
+</aside>
 
 </div>
 
-<!-- ================= FOOTER ================= -->
+</main>
 
 <footer>
 
+<p>
+
 © 2026 StadiumGenie | AI Smart Stadium Assistant
+
+</p>
 
 </footer>
 

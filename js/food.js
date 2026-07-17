@@ -1,116 +1,106 @@
+// ===============================
+// Restaurant Data
+// ===============================
+
 const restaurants = {
 
-    "A":{
+    A: {
+        title: "🍔 Food Court A",
+        image: "images/food.jpg",
+        info: `
+            <b>📍 Location:</b> Near Gate 2<br><br>
 
-        title:"🍔 Food Court A",
+            ⭐ Rating: 4.8 / 5<br>
 
-        image:"images/food.jpg",
+            ⏱ Waiting Time: 5 Minutes<br>
 
-        info:`
-        <b>📍 Location:</b> Near Gate 2<br><br>
+            💰 Price Range: ₹₹<br><br>
 
-        ⭐ Rating: 4.8 / 5<br>
+            <b>🍽 Menu</b><br><br>
 
-        ⏱ Waiting Time: 5 Minutes<br>
-
-        💰 Price Range: ₹₹<br><br>
-
-        <b>🍽 Menu</b><br><br>
-
-        🍔 Veg Burger - ₹180<br>
-
-        🍟 French Fries - ₹120<br>
-
-        🌮 Veg Wrap - ₹150<br>
-
-        🥤 Cold Drink - ₹80<br>
-
-        🍦 Ice Cream - ₹100
+            🍔 Veg Burger - ₹180<br>
+            🍟 French Fries - ₹120<br>
+            🌮 Veg Wrap - ₹150<br>
+            🥤 Cold Drink - ₹80<br>
+            🍦 Ice Cream - ₹100
         `
     },
 
-    "B":{
+    B: {
+        title: "🍕 Food Court B",
+        image: "images/food.jpg",
+        info: `
+            <b>📍 Location:</b> Near Gate 4<br><br>
 
-        title:"🍕 Food Court B",
+            ⭐ Rating: 4.7 / 5<br>
 
-        image:"images/food.jpg",
+            ⏱ Waiting Time: 8 Minutes<br>
 
-        info:`
-        <b>📍 Location:</b> Near Gate 4<br><br>
+            💰 Price Range: ₹₹₹<br><br>
 
-        ⭐ Rating: 4.7 / 5<br>
+            <b>🍽 Menu</b><br><br>
 
-        ⏱ Waiting Time: 8 Minutes<br>
-
-        💰 Price Range: ₹₹₹<br><br>
-
-        <b>🍽 Menu</b><br><br>
-
-        🍕 Margherita Pizza - ₹250<br>
-
-        🍕 Farmhouse Pizza - ₹350<br>
-
-        🍝 White Sauce Pasta - ₹280<br>
-
-        🥤 Soft Drink - ₹90<br>
-
-        🍰 Brownie - ₹180
+            🍕 Margherita Pizza - ₹250<br>
+            🍕 Farmhouse Pizza - ₹350<br>
+            🍝 White Sauce Pasta - ₹280<br>
+            🥤 Soft Drink - ₹90<br>
+            🍰 Brownie - ₹180
         `
     },
 
-    "Cafe":{
+    Cafe: {
+        title: "☕ Café Corner",
+        image: "images/food.jpg",
+        info: `
+            <b>📍 Location:</b> Main Plaza<br><br>
 
-        title:"☕ Café Corner",
+            ⭐ Rating: 4.5 / 5<br>
 
-        image:"images/food.jpg",
+            ⏱ Waiting Time: 2 Minutes<br>
 
-        info:`
-        <b>📍 Location:</b> Main Plaza<br><br>
+            💰 Price Range: ₹<br><br>
 
-        ⭐ Rating: 4.5 / 5<br>
+            <b>🍽 Menu</b><br><br>
 
-        ⏱ Waiting Time: 2 Minutes<br>
-
-        💰 Price Range: ₹<br><br>
-
-        <b>🍽 Menu</b><br><br>
-
-        ☕ Cappuccino - ₹150<br>
-
-        ☕ Latte - ₹170<br>
-
-        🥐 Croissant - ₹120<br>
-
-        🍰 Chocolate Cake - ₹200<br>
-
-        🥪 Sandwich - ₹140
+            ☕ Cappuccino - ₹150<br>
+            ☕ Latte - ₹170<br>
+            🥐 Croissant - ₹120<br>
+            🍰 Chocolate Cake - ₹200<br>
+            🥪 Sandwich - ₹140
         `
     }
 
 };
 
 // ===============================
-// Show Menu
+// Cached Element
 // ===============================
 
-function showMenu(place){
+const menuBox = document.getElementById("menuBox");
+
+// ===============================
+// Show Restaurant Menu
+// ===============================
+
+function showMenu(place) {
 
     const data = restaurants[place];
 
-    document.getElementById("menuBox").innerHTML = `
+    if (!data || !menuBox) return;
 
-        <img src="${data.image}" class="info-image">
+    menuBox.innerHTML = `
+        <img
+            src="${data.image}"
+            class="info-image"
+            alt="${data.title}">
 
         <h2>${data.title}</h2>
 
         <p>${data.info}</p>
 
         <button onclick="navigateFood('${data.title}')">
-
             🧭 Navigate
-
         </button>
-
     `;
 
 }
@@ -119,42 +109,43 @@ function showMenu(place){
 // Navigation
 // ===============================
 
-function navigateFood(location){
+function navigateFood(location) {
 
-    document.getElementById("menuBox").innerHTML = `
+    if (!menuBox) return;
 
-        <img src="images/food.jpg" class="info-image">
+    menuBox.innerHTML = `
+        <img
+            src="images/food.jpg"
+            class="info-image"
+            alt="Restaurant Navigation">
 
         <h2>🧭 Navigation</h2>
 
         <p>
 
-        <strong>Destination:</strong> ${location}
+            <strong>Destination:</strong> ${location}
 
-        <br><br>
+            <br><br>
 
-        📏 Distance: 180 meters
+            📏 Distance: 180 meters
 
-        <br>
+            <br>
 
-        🚶 Walking Time: 3 Minutes
+            🚶 Walking Time: 3 Minutes
 
-        <br>
+            <br>
 
-        ➜ Follow the stadium signs to reach your destination.
+            ➜ Follow the stadium signs to reach your destination.
 
-        <br><br>
+            <br><br>
 
-        ✅ Route is clear.
+            ✅ Route is clear.
 
         </p>
 
         <button onclick="refreshRestaurants()">
-
             🔄 Refresh Status
-
         </button>
-
     `;
 
 }
@@ -163,7 +154,7 @@ function navigateFood(location){
 // Refresh Restaurant Status
 // ===============================
 
-function refreshRestaurants(){
+function refreshRestaurants() {
 
     const messages = [
 
@@ -177,8 +168,22 @@ function refreshRestaurants(){
 
     ];
 
-    const random = Math.floor(Math.random()*messages.length);
+    const randomIndex = Math.floor(Math.random() * messages.length);
 
-    alert(messages[random]);
+    alert(messages[randomIndex]);
+
+}
+
+// ===============================
+// Export for Jest
+// ===============================
+
+if (typeof module !== "undefined") {
+
+    module.exports = {
+        showMenu,
+        navigateFood,
+        refreshRestaurants
+    };
 
 }

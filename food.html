@@ -6,7 +6,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>StadiumGenie | Smart Food Finder</title>
+<meta name="description"
+content="Explore restaurants, cafés and food courts inside the stadium with live waiting times, ratings, menus and navigation.">
+
+<title>🍔 StadiumGenie | Smart Food Finder</title>
 
 <link rel="stylesheet" href="css/food.css">
 
@@ -18,9 +21,11 @@
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
+<a href="#mainContent" class="skip-link">Skip to Main Content</a>
 
-<nav>
+<!-- Navigation -->
+
+<nav aria-label="Main Navigation">
 
 <div class="logo">
 🏟 StadiumGenie
@@ -42,8 +47,6 @@
 
 </nav>
 
-<!-- ================= HEADER ================= -->
-
 <header>
 
 <h1>🍔 Smart Food Finder</h1>
@@ -54,7 +57,7 @@ Find the best food courts, cafés and restaurants around the stadium.
 
 </p>
 
-<div class="live-status">
+<div class="live-status" aria-live="polite">
 
 🟢 Live Restaurant Status
 
@@ -62,17 +65,21 @@ Find the best food courts, cafés and restaurants around the stadium.
 
 </header>
 
-<!-- ================= MAIN CONTAINER ================= -->
+<main id="mainContent">
 
 <div class="main-container">
 
-<!-- LEFT SIDE -->
+<section class="food-container" aria-labelledby="foodHeading">
 
-<div class="food-container">
+<h2 id="foodHeading" class="visually-hidden">
 
-<!-- ================= FOOD COURT A ================= -->
+Available Food Courts
 
-<div class="food-card">
+</h2>
+
+<!-- Food Court A -->
+
+<article class="food-card">
 
 <img src="images/food.jpg" alt="Food Court A">
 
@@ -90,13 +97,17 @@ Find the best food courts, cafés and restaurants around the stadium.
 
 <div class="button-group">
 
-<button onclick="showMenu('A')">
+<button
+onclick="showMenu('A')"
+aria-label="View menu for Food Court A">
 
 📋 View Menu
 
 </button>
 
-<button onclick="navigateFood('Gate 2')">
+<button
+onclick="navigateFood('Gate 2')"
+aria-label="Navigate to Food Court A">
 
 🧭 Navigate
 
@@ -104,11 +115,11 @@ Find the best food courts, cafés and restaurants around the stadium.
 
 </div>
 
-</div>
+</article>
 
-<!-- ================= FOOD COURT B ================= -->
+<!-- Food Court B -->
 
-<div class="food-card">
+<article class="food-card">
 
 <img src="images/food.jpg" alt="Food Court B">
 
@@ -126,13 +137,17 @@ Find the best food courts, cafés and restaurants around the stadium.
 
 <div class="button-group">
 
-<button onclick="showMenu('B')">
+<button
+onclick="showMenu('B')"
+aria-label="View menu for Food Court B">
 
 📋 View Menu
 
 </button>
 
-<button onclick="navigateFood('Gate 4')">
+<button
+onclick="navigateFood('Gate 4')"
+aria-label="Navigate to Food Court B">
 
 🧭 Navigate
 
@@ -140,13 +155,13 @@ Find the best food courts, cafés and restaurants around the stadium.
 
 </div>
 
-</div>
+</article>
 
-<!-- ================= CAFE ================= -->
+<!-- Cafe -->
 
-<div class="food-card">
+<article class="food-card">
 
-<img src="images/food.jpg" alt="Cafe">
+<img src="images/food.jpg" alt="Cafe Corner">
 
 <h2>☕ Café Corner</h2>
 
@@ -162,13 +177,17 @@ Find the best food courts, cafés and restaurants around the stadium.
 
 <div class="button-group">
 
-<button onclick="showMenu('Cafe')">
+<button
+onclick="showMenu('Cafe')"
+aria-label="View menu for Cafe Corner">
 
 📋 View Menu
 
 </button>
 
-<button onclick="navigateFood('Main Plaza')">
+<button
+onclick="navigateFood('Main Plaza')"
+aria-label="Navigate to Cafe Corner">
 
 🧭 Navigate
 
@@ -176,17 +195,24 @@ Find the best food courts, cafés and restaurants around the stadium.
 
 </div>
 
-</div>
+</article>
 
-</div>
+</section>
 
-<!-- ================= RIGHT SIDE ================= -->
+<!-- Information Panel -->
 
-<div id="menuBox">
+<aside id="menuBox" aria-labelledby="menuHeading">
 
-<h2>🍽 Restaurant Information</h2>
+<h2 id="menuHeading">
 
-<img src="images/food.jpg" class="info-image" alt="Food">
+🍽 Restaurant Information
+
+</h2>
+
+<img
+src="images/food.jpg"
+class="info-image"
+alt="Restaurant Information">
 
 <p>
 
@@ -214,21 +240,27 @@ Select a restaurant to see:
 
 </p>
 
-<button onclick="refreshRestaurants()">
+<button
+onclick="refreshRestaurants()"
+aria-label="Refresh restaurant status">
 
 🔄 Refresh Status
 
 </button>
 
-</div>
+</aside>
 
 </div>
 
-<!-- ================= FOOTER ================= -->
+</main>
 
 <footer>
 
+<p>
+
 © 2026 StadiumGenie | AI Smart Stadium Assistant
+
+</p>
 
 </footer>
 

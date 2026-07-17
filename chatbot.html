@@ -20,7 +20,7 @@
 
     <!-- Navigation -->
 
-    <nav>
+    <nav aria-label="Main Navigation">
 
         <div class="logo">
             🏟 StadiumGenie
@@ -55,111 +55,144 @@
 
     </header>
 
-    <!-- Chat Section -->
+    <!-- Main Content -->
 
-    <section class="chat-section">
+    <main>
 
-        <!-- Left -->
+        <section class="chat-section">
 
-        <div class="chat-container">
+            <!-- Chat Area -->
 
-            <div class="chat-header">
+            <section class="chat-container" aria-labelledby="chatHeading">
 
-                🤖 StadiumGenie AI
+                <div class="chat-header" id="chatHeading">
 
-            </div>
-
-            <div id="chatBox">
-
-                <div class="bot-message">
-
-                    👋 Welcome!
-
-                    <br><br>
-
-                    Try asking:
-
-                    <ul>
-
-                        <li>Where is Gate 4?</li>
-
-                        <li>Nearest parking?</li>
-
-                        <li>Food near Gate 2?</li>
-
-                        <li>Medical center location?</li>
-
-                    </ul>
+                    🤖 StadiumGenie AI
 
                 </div>
 
-            </div>
+                <div
+                    id="chatBox"
+                    class="chat-box"
+                    role="log"
+                    aria-live="polite"
+                    aria-relevant="additions"
+                    aria-atomic="false"
+                    aria-label="Conversation with StadiumGenie AI">
 
-            <form class="input-area"
-                  onsubmit="event.preventDefault(); askAI();">
+                    <div class="bot-message">
 
-                <input
-                    type="text"
-                    id="question"
-                    placeholder="Ask your question..."
-                    autocomplete="off">
+                        <strong>👋 Welcome!</strong>
 
-                <button type="button"
-                        onclick="startVoice()">
+                        <br><br>
 
-                    🎤
+                        Try asking:
 
-                </button>
+                        <ul>
 
-                <button type="submit">
+                            <li>Where is Gate 4?</li>
 
-                    Send
+                            <li>Nearest parking?</li>
 
-                </button>
+                            <li>Food near Gate 2?</li>
 
-            </form>
+                            <li>Medical center location?</li>
 
-        </div>
+                            <li>Match schedule?</li>
 
-        <!-- Right -->
+                        </ul>
 
-        <div class="info-panel">
+                    </div>
 
-            <img src="images/stadium.jpg" alt="AI Assistant">
+                </div>
 
-            <h2>AI Smart Guide</h2>
+                <form
+                    class="input-area"
+                    onsubmit="event.preventDefault(); askAI();">
 
-            <p>
+                    <label for="question" class="visually-hidden">
+                        Ask your question
+                    </label>
 
-                The assistant can answer questions about:
+                    <input
+                        type="text"
+                        id="question"
+                        name="question"
+                        placeholder="Ask your question..."
+                        autocomplete="on"
+                        required
+                        maxlength="300"
+                        aria-required="true"
+                        aria-label="Ask StadiumGenie AI">
 
-            </p>
+                    <button
+                        type="button"
+                        onclick="startVoice()"
+                        aria-label="Start voice input">
 
-            <ul>
+                        🎤
 
-                <li>🏟 Stadium Gates</li>
+                    </button>
 
-                <li>🚗 Parking Availability</li>
+                    <button
+                        type="submit"
+                        aria-label="Send message">
 
-                <li>🍔 Food Courts</li>
+                        Send
 
-                <li>🚇 Metro Station</li>
+                    </button>
 
-                <li>🏥 Emergency Services</li>
+                </form>
 
-                <li>📅 Match Schedule</li>
+                <p class="shortcut">
+                    ⌨️ Press <strong>Enter</strong> to send your message.
+                </p>
 
-            </ul>
+            </section>
 
-        </div>
+            <!-- Information Panel -->
 
-    </section>
+            <aside class="info-panel">
+
+                <img
+                    src="images/stadium.jpg"
+                    alt="View of a football stadium used by StadiumGenie AI Assistant">
+
+                <h2>AI Smart Guide</h2>
+
+                <p>
+                    The assistant can answer questions about:
+                </p>
+
+                <ul>
+
+                    <li>🏟 Stadium Gates</li>
+
+                    <li>🚗 Parking Availability</li>
+
+                    <li>🍔 Food Courts</li>
+
+                    <li>🚇 Metro Station</li>
+
+                    <li>🏥 Emergency Services</li>
+
+                    <li>📅 Match Schedule</li>
+
+                </ul>
+
+            </aside>
+
+        </section>
+
+    </main>
 
     <!-- Footer -->
 
     <footer>
 
-        © 2026 StadiumGenie | AI Smart Stadium Assistant
+        <p>
+            © 2026 StadiumGenie | AI Smart Stadium Assistant
+        </p>
 
     </footer>
 

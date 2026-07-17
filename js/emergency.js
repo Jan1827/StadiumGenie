@@ -1,88 +1,99 @@
+// =====================================
+// Emergency Data
+// =====================================
+
 const emergencyData = {
 
-    "medical":{
+    medical: {
 
-        title:"🏥 Medical Center",
+        title: "🏥 Medical Center",
 
-        image:"images/hospital.jpg",
+        image: "images/hospital.jpg",
 
-        info:`
-        <b>📍 Location:</b> Beside Gate 3<br><br>
+        info: `
+            <b>📍 Location:</b> Beside Gate 3<br><br>
 
-        👨‍⚕ Doctors Available: 5<br>
+            👨‍⚕ Doctors Available: 5<br>
 
-        🚑 Ambulances Ready: 2<br>
+            🚑 Ambulances Ready: 2<br>
 
-        🏥 ICU Beds Available: 8<br>
+            🏥 ICU Beds Available: 8<br>
 
-        💊 First Aid Available<br>
+            💊 First Aid Available<br>
 
-        🕒 Open 24 × 7
+            🕒 Open 24 × 7
         `
     },
 
-    "exit":{
+    exit: {
 
-        title:"🚪 Emergency Exit",
+        title: "🚪 Emergency Exit",
 
-        image:"images/gate.jpg",
+        image: "images/gate.jpg",
 
-        info:`
-        <b>📍 Nearest Exit:</b> Gate 2<br><br>
+        info: `
+            <b>📍 Nearest Exit:</b> Gate 2<br><br>
 
-        📏 Distance: 120 meters<br>
+            📏 Distance: 120 meters<br>
 
-        🚶 Walking Time: 2 Minutes<br>
+            🚶 Walking Time: 2 Minutes<br>
 
-        ⚡ Fastest Evacuation Route<br>
+            ⚡ Fastest Evacuation Route<br>
 
-        ♿ Wheelchair Accessible
+            ♿ Wheelchair Accessible
         `
     },
 
-    "help":{
+    help: {
 
-        title:"☎ Emergency Help Desk",
+        title: "☎ Emergency Help Desk",
 
-        image:"images/hospital.jpg",
+        image: "images/hospital.jpg",
 
-        info:`
-        <b>📞 Emergency Number:</b> +91 1800 123 456<br><br>
+        info: `
+            <b>📞 Emergency Number:</b> +91 1800 123 456<br><br>
 
-        🕒 Available 24 × 7<br>
+            🕒 Available 24 × 7<br>
 
-        ⚡ Average Response Time: Under 2 Minutes<br>
+            ⚡ Average Response Time: Under 2 Minutes<br>
 
-        👮 Security Staff Always Available<br>
+            👮 Security Staff Always Available<br>
 
-        🚑 Emergency Coordination Center
+            🚑 Emergency Coordination Center
         `
     }
 
 };
 
 // =====================================
+// Cached Element
+// =====================================
+
+const emergencyBox = document.getElementById("emergencyBox");
+
+// =====================================
 // Show Emergency Details
 // =====================================
 
-function showEmergency(type){
+function showEmergency(type) {
 
     const data = emergencyData[type];
 
-    document.getElementById("emergencyBox").innerHTML = `
+    if (!data || !emergencyBox) return;
 
-        <img src="${data.image}" class="info-image">
+    emergencyBox.innerHTML = `
+        <img
+            src="${data.image}"
+            class="info-image"
+            alt="${data.title}">
 
         <h2>${data.title}</h2>
 
         <p>${data.info}</p>
 
         <button onclick="navigateEmergency('${data.title}')">
-
             🧭 Navigate
-
         </button>
-
     `;
 
 }
@@ -91,42 +102,43 @@ function showEmergency(type){
 // Navigation
 // =====================================
 
-function navigateEmergency(destination){
+function navigateEmergency(destination) {
 
-    document.getElementById("emergencyBox").innerHTML = `
+    if (!emergencyBox) return;
 
-        <img src="images/gate.jpg" class="info-image">
+    emergencyBox.innerHTML = `
+        <img
+            src="images/gate.jpg"
+            class="info-image"
+            alt="Emergency Route">
 
         <h2>🧭 Emergency Navigation</h2>
 
         <p>
 
-        <strong>Destination:</strong> ${destination}
+            <strong>Destination:</strong> ${destination}
 
-        <br><br>
+            <br><br>
 
-        📏 Distance: 150 meters
+            📏 Distance: 150 meters
 
-        <br>
+            <br>
 
-        🚶 Estimated Walking Time: 2 Minutes
+            🚶 Estimated Walking Time: 2 Minutes
 
-        <br>
+            <br>
 
-        ➜ Follow the emergency signs to reach your destination safely.
+            ➜ Follow the emergency signs to reach your destination safely.
 
-        <br><br>
+            <br><br>
 
-        ✅ Route is clear.
+            ✅ Route is clear.
 
         </p>
 
         <button onclick="refreshEmergency()">
-
             🔄 Refresh Status
-
         </button>
-
     `;
 
 }
@@ -135,18 +147,16 @@ function navigateEmergency(destination){
 // Emergency Call (Demo)
 // =====================================
 
-function callHelp(){
+function callHelp() {
 
-    alert(
-`📞 Calling Emergency Help Desk...
+    alert(`📞 Calling Emergency Help Desk...
 
 Demo Mode Only
 
 Emergency Number:
 +91 1800 123 456
 
-Medical and Security teams have been notified.`
-    );
+Medical and Security teams have been notified.`);
 
 }
 
@@ -154,7 +164,7 @@ Medical and Security teams have been notified.`
 // Refresh Status
 // =====================================
 
-function refreshEmergency(){
+function refreshEmergency() {
 
     const messages = [
 
@@ -168,8 +178,23 @@ function refreshEmergency(){
 
     ];
 
-    const random = Math.floor(Math.random() * messages.length);
+    const randomIndex = Math.floor(Math.random() * messages.length);
 
-    alert(messages[random]);
+    alert(messages[randomIndex]);
+
+}
+
+// =====================================
+// Export for Jest
+// =====================================
+
+if (typeof module !== "undefined") {
+
+    module.exports = {
+        showEmergency,
+        navigateEmergency,
+        callHelp,
+        refreshEmergency
+    };
 
 }

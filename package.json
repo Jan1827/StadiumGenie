@@ -1,18 +1,30 @@
 {
   "name": "stadiumgenie",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "AI Smart Stadium Assistant",
+  "main": "server.js",
   "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "AI",
+    "Stadium",
+    "Football",
+    "Hackathon",
+    "JavaScript"
+  ],
+  "author": "Janhavi Ojha",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5",
+    "jsdom": "^26.1.0"
   }
 }

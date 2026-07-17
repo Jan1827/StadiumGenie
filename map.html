@@ -6,7 +6,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Interactive Stadium Map | StadiumGenie</title>
+<meta name="description"
+content="Explore the interactive stadium map to locate gates, parking, food courts, metro stations and emergency services with StadiumGenie.">
+
+<title>🗺 StadiumGenie | Interactive Stadium Map</title>
 
 <link rel="stylesheet" href="css/map.css">
 
@@ -18,154 +21,228 @@
 
 <body>
 
-<!-- ================= Navigation ================= -->
+<a href="#mainContent" class="skip-link">Skip to Main Content</a>
 
-<nav>
+<!-- Navigation -->
+
+<nav aria-label="Main Navigation">
 
 <div class="logo">
 🏟 StadiumGenie
 </div>
 
 <ul>
+
 <li><a href="dashboard.html">🏠 Dashboard</a></li>
 <li><a href="chatbot.html">🤖 AI Assistant</a></li>
 <li><a href="parking.html">🚗 Parking</a></li>
 <li><a href="food.html">🍔 Food Finder</a></li>
 <li><a href="schedule.html">📅 Schedule</a></li>
+
 </ul>
 
 </nav>
 
-<!-- ================= Header ================= -->
+<!-- Header -->
 
 <header>
 
 <h1>🗺 Interactive Stadium Map</h1>
 
 <p>
+
 Click any location below to explore gates, parking, food courts,
 metro station and emergency services.
+
 </p>
 
-<a href="dashboard.html" class="back-btn">
+<a
+href="dashboard.html"
+class="back-btn"
+aria-label="Back to Dashboard">
+
 ← Back to Dashboard
+
 </a>
 
 </header>
 
-<!-- ================= Main Content ================= -->
+<main id="mainContent">
 
 <div class="map-container">
 
 <!-- Left Section -->
 
-<div class="stadium-image-container">
+<section
+class="stadium-image-container"
+aria-labelledby="stadiumHeading">
 
-<h2>🏟 Football Stadium</h2>
+<h2 id="stadiumHeading">
+
+🏟 Football Stadium
+
+</h2>
 
 <img
 src="images/stadium.jpg"
 class="stadium-image"
-alt="Football Stadium">
+alt="Interactive view of the football stadium">
 
 <!-- Location Cards -->
 
 <div class="location-grid">
 
-<div class="location-card" onclick="showInfo('Gate 1')">
+<article
+class="location-card"
+onclick="showInfo('Gate 1')"
+tabindex="0"
+role="button"
+aria-label="View information for Gate 1">
 
-<img src="images/gate.jpg" alt="Gate">
+<img src="images/gate.jpg" alt="Gate 1">
 
 <h3>🚪 Gate 1</h3>
 
-</div>
+</article>
 
-<div class="location-card" onclick="showInfo('Gate 2')">
+<article
+class="location-card"
+onclick="showInfo('Gate 2')"
+tabindex="0"
+role="button"
+aria-label="View information for Gate 2">
 
-<img src="images/gate.jpg" alt="Gate">
+<img src="images/gate.jpg" alt="Gate 2">
 
 <h3>⭐ Gate 2</h3>
 
-</div>
+</article>
 
-<div class="location-card" onclick="showInfo('Gate 3')">
+<article
+class="location-card"
+onclick="showInfo('Gate 3')"
+tabindex="0"
+role="button"
+aria-label="View information for Gate 3">
 
-<img src="images/gate.jpg" alt="Gate">
+<img src="images/gate.jpg" alt="Gate 3">
 
 <h3>🚪 Gate 3</h3>
 
-</div>
+</article>
 
-<div class="location-card" onclick="showInfo('Gate 4')">
+<article
+class="location-card"
+onclick="showInfo('Gate 4')"
+tabindex="0"
+role="button"
+aria-label="View information for Gate 4">
 
-<img src="images/gate.jpg" alt="Gate">
+<img src="images/gate.jpg" alt="Gate 4">
 
 <h3>🚪 Gate 4</h3>
 
-</div>
+</article>
 
-<div class="location-card" onclick="showInfo('Parking A')">
+<article
+class="location-card"
+onclick="showInfo('Parking A')"
+tabindex="0"
+role="button"
+aria-label="View Parking A">
 
-<img src="images/parking.jpg" alt="Parking">
+<img src="images/parking.jpg" alt="Parking A">
 
 <h3>🚗 Parking A</h3>
 
-</div>
+</article>
 
-<div class="location-card" onclick="showInfo('Parking B')">
+<article
+class="location-card"
+onclick="showInfo('Parking B')"
+tabindex="0"
+role="button"
+aria-label="View Parking B">
 
-<img src="images/parking.jpg" alt="Parking">
+<img src="images/parking.jpg" alt="Parking B">
 
 <h3>🚗 Parking B</h3>
 
-</div>
+</article>
 
-<div class="location-card" onclick="showInfo('Food Court A')">
+<article
+class="location-card"
+onclick="showInfo('Food Court A')"
+tabindex="0"
+role="button"
+aria-label="View Food Court A">
 
-<img src="images/food.jpg" alt="Food">
+<img src="images/food.jpg" alt="Food Court A">
 
 <h3>🍔 Food Court A</h3>
 
-</div>
+</article>
 
-<div class="location-card" onclick="showInfo('Food Court B')">
+<article
+class="location-card"
+onclick="showInfo('Food Court B')"
+tabindex="0"
+role="button"
+aria-label="View Food Court B">
 
-<img src="images/food.jpg" alt="Food">
+<img src="images/food.jpg" alt="Food Court B">
 
 <h3>🍕 Food Court B</h3>
 
-</div>
+</article>
 
-<div class="location-card" onclick="showInfo('Medical')">
+<article
+class="location-card"
+onclick="showInfo('Medical')"
+tabindex="0"
+role="button"
+aria-label="View Medical Center">
 
-<img src="images/hospital.jpg" alt="Medical">
+<img src="images/hospital.jpg" alt="Medical Center">
 
 <h3>🏥 Medical Center</h3>
 
-</div>
+</article>
 
-<div class="location-card" onclick="showInfo('Metro')">
+<article
+class="location-card"
+onclick="showInfo('Metro')"
+tabindex="0"
+role="button"
+aria-label="View Metro Station">
 
-<img src="images/metro.jpg" alt="Metro">
+<img src="images/metro.jpg" alt="Metro Station">
 
 <h3>🚇 Metro Station</h3>
 
-</div>
+</article>
 
 </div>
 
-</div>
+</section>
 
-<!-- ================= Right Section ================= -->
+<!-- Information Panel -->
 
-<div id="infoBox">
+<aside
+id="infoBox"
+aria-labelledby="infoHeading"
+aria-live="polite">
 
-<h2>📍 Location Information</h2>
+<h2 id="infoHeading">
+
+📍 Location Information
+
+</h2>
 
 <img
 src="images/stadium.jpg"
 class="info-image"
-alt="Location">
+alt="Selected stadium location">
 
 <p>
 
@@ -177,15 +254,19 @@ The selected location image and description will appear here.
 
 </p>
 
-</div>
+</aside>
 
 </div>
 
-<!-- ================= Footer ================= -->
+</main>
 
 <footer>
 
+<p>
+
 © 2026 StadiumGenie | AI Smart Stadium Assistant
+
+</p>
 
 </footer>
 

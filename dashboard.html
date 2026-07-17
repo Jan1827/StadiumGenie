@@ -6,7 +6,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>StadiumGenie Dashboard</title>
+<meta name="description"
+content="StadiumGenie Dashboard - AI Smart Stadium Assistant for navigation, parking, food, emergency services and match updates.">
+
+<title>🏟 StadiumGenie Dashboard</title>
 
 <link rel="stylesheet" href="css/dashboard.css">
 
@@ -18,43 +21,38 @@
 
 <body>
 
+<a href="#mainContent" class="skip-link">Skip to Main Content</a>
+
 <!-- ================= Navigation ================= -->
 
-<nav class="navbar">
+<nav class="navbar" aria-label="Main Navigation">
 
-    <div class="logo">
-        🏟 StadiumGenie
-    </div>
+<div class="logo">
+🏟 StadiumGenie
+</div>
 
-    <ul>
+<ul>
 
-        <li><a href="dashboard.html">🏠 Dashboard</a></li>
+<li><a href="dashboard.html">🏠 Dashboard</a></li>
+<li><a href="map.html">📍 Stadium Map</a></li>
+<li><a href="chatbot.html">🤖 AI Assistant</a></li>
+<li><a href="parking.html">🚗 Parking</a></li>
+<li><a href="food.html">🍔 Food Finder</a></li>
+<li><a href="schedule.html">📅 Schedule</a></li>
 
-        <li><a href="map.html">📍 Stadium Map</a></li>
-
-        <li><a href="chatbot.html">🤖 AI Assistant</a></li>
-
-        <li><a href="parking.html">🚗 Parking</a></li>
-
-        <li><a href="food.html">🍔 Food Finder</a></li>
-
-        <li><a href="schedule.html">📅 Schedule</a></li>
-
-    </ul>
+</ul>
 
 </nav>
 
-<!-- ================= Live Date & Time ================= -->
+<!-- ================= Date & Time ================= -->
 
-<div class="top-info">
+<div class="top-info" aria-label="Current Date and Time">
 
 <div id="currentDate"></div>
 
 <div id="currentTime"></div>
 
 </div>
-
-<!-- ================= Header ================= -->
 
 <header>
 
@@ -64,49 +62,59 @@
 
 </header>
 
+<main id="mainContent">
+
 <!-- ================= Match Status ================= -->
+
+<section aria-labelledby="matchStatusHeading">
+
+<h2 id="matchStatusHeading" class="section-title">
+⚽ Live Match Status
+</h2>
 
 <div class="status-container">
 
-<div class="status-card">
+<article class="status-card">
 
 <h3>⚽ Match</h3>
 
 <p>India 🇮🇳 vs Brazil 🇧🇷</p>
 
-</div>
+</article>
 
-<div class="status-card">
+<article class="status-card">
 
 <h3>🕢 Kickoff</h3>
 
 <p>7:30 PM</p>
 
-</div>
+</article>
 
-<div class="status-card">
+<article class="status-card">
 
 <h3>🌤 Weather</h3>
 
-<p id="weatherText">Loading...</p>
+<p id="weatherText" aria-live="polite">Loading...</p>
 
-</div>
+</article>
 
-<div class="status-card">
+<article class="status-card">
 
 <h3>👥 Crowd</h3>
 
-<p id="crowdText">Loading...</p>
+<p id="crowdText" aria-live="polite">Loading...</p>
+
+</article>
 
 </div>
 
-</div>
+</section>
 
 <!-- ================= Quick Access ================= -->
 
-<section>
+<section aria-labelledby="quickAccessHeading">
 
-<h2 class="section-title">
+<h2 id="quickAccessHeading" class="section-title">
 
 ⚡ Quick Access
 
@@ -114,7 +122,7 @@
 
 <div class="cards">
 
-<div class="card" onclick="location.href='map.html'">
+<a href="map.html" class="card" aria-label="Open Stadium Map">
 
 <div class="icon">📍</div>
 
@@ -122,9 +130,9 @@
 
 <p>Find Gates & Seats</p>
 
-</div>
+</a>
 
-<div class="card" onclick="location.href='chatbot.html'">
+<a href="chatbot.html" class="card" aria-label="Open AI Assistant">
 
 <div class="icon">🤖</div>
 
@@ -132,9 +140,9 @@
 
 <p>Ask Stadium Questions</p>
 
-</div>
+</a>
 
-<div class="card" onclick="location.href='parking.html'">
+<a href="parking.html" class="card" aria-label="Open Parking">
 
 <div class="icon">🚗</div>
 
@@ -142,9 +150,9 @@
 
 <p>Live Parking Status</p>
 
-</div>
+</a>
 
-<div class="card" onclick="location.href='food.html'">
+<a href="food.html" class="card" aria-label="Open Food Finder">
 
 <div class="icon">🍔</div>
 
@@ -152,9 +160,9 @@
 
 <p>Restaurants & Cafés</p>
 
-</div>
+</a>
 
-<div class="card" onclick="location.href='emergency.html'">
+<a href="emergency.html" class="card" aria-label="Open Emergency Services">
 
 <div class="icon">🚑</div>
 
@@ -162,9 +170,9 @@
 
 <p>24×7 Medical Help</p>
 
-</div>
+</a>
 
-<div class="card" onclick="location.href='schedule.html'">
+<a href="schedule.html" class="card" aria-label="Open Match Schedule">
 
 <div class="icon">📅</div>
 
@@ -172,17 +180,17 @@
 
 <p>Today's Fixtures</p>
 
-</div>
+</a>
 
 </div>
 
 </section>
 
-<!-- ================= Live Stadium ================= -->
+<!-- ================= Stadium Information ================= -->
 
-<section>
+<section aria-labelledby="liveInfoHeading">
 
-<h2 class="section-title">
+<h2 id="liveInfoHeading" class="section-title">
 
 📡 Live Stadium Information
 
@@ -190,47 +198,51 @@
 
 <div class="status-container">
 
-<div class="status-card">
+<article class="status-card">
 
 <h3>🚗 Parking Available</h3>
 
 <p>220 Spaces</p>
 
-</div>
+</article>
 
-<div class="status-card">
+<article class="status-card">
 
 <h3>🚻 Restrooms</h3>
 
 <p>18 Locations</p>
 
-</div>
+</article>
 
-<div class="status-card">
+<article class="status-card">
 
 <h3>🍔 Food Courts</h3>
 
 <p>12 Open</p>
 
-</div>
+</article>
 
-<div class="status-card">
+<article class="status-card">
 
 <h3>🚑 Medical Centers</h3>
 
 <p>3 Active</p>
 
-</div>
+</article>
 
 </div>
 
 </section>
 
-<!-- ================= Footer ================= -->
+</main>
 
 <footer>
 
-<p>© 2026 StadiumGenie | AI Smart Stadium Assistant</p>
+<p>
+
+© 2026 StadiumGenie | AI Smart Stadium Assistant
+
+</p>
 
 </footer>
 

@@ -6,7 +6,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>StadiumGenie | Emergency Center</title>
+<meta name="description"
+content="Access emergency medical services, emergency exits, help desks and safety information inside the stadium with StadiumGenie.">
+
+<title>🚑 StadiumGenie | Emergency Center</title>
 
 <link rel="stylesheet" href="css/emergency.css">
 
@@ -18,9 +21,11 @@
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
+<a href="#mainContent" class="skip-link">Skip to Main Content</a>
 
-<nav>
+<!-- Navigation -->
+
+<nav aria-label="Main Navigation">
 
 <div class="logo">
 🏟 StadiumGenie
@@ -44,8 +49,6 @@
 
 </nav>
 
-<!-- ================= HEADER ================= -->
-
 <header>
 
 <h1>🚑 Emergency Assistance Center</h1>
@@ -56,7 +59,7 @@ Get immediate access to medical services, emergency exits and help desks.
 
 </p>
 
-<div class="live-status">
+<div class="live-status" aria-live="polite">
 
 🟢 Emergency Services Online
 
@@ -64,19 +67,25 @@ Get immediate access to medical services, emergency exits and help desks.
 
 </header>
 
-<!-- ================= MAIN CONTAINER ================= -->
+<main id="mainContent">
 
 <div class="main-container">
 
-<!-- LEFT SIDE -->
+<section class="emergency-container" aria-labelledby="emergencyHeading">
 
-<div class="emergency-container">
+<h2 id="emergencyHeading" class="visually-hidden">
 
-<!-- Medical -->
+Emergency Services
 
-<div class="emergency-card">
+</h2>
 
-<img src="images/hospital.jpg" alt="Medical Center">
+<!-- Medical Center -->
+
+<article class="emergency-card">
+
+<img
+src="images/hospital.jpg"
+alt="Medical Center">
 
 <h2>🏥 Medical Center</h2>
 
@@ -88,13 +97,17 @@ Get immediate access to medical services, emergency exits and help desks.
 
 <div class="button-group">
 
-<button onclick="showEmergency('medical')">
+<button
+onclick="showEmergency('medical')"
+aria-label="View medical center details">
 
 📋 Details
 
 </button>
 
-<button onclick="navigateEmergency('Gate 3')">
+<button
+onclick="navigateEmergency('Gate 3')"
+aria-label="Navigate to Medical Center">
 
 🧭 Navigate
 
@@ -102,13 +115,15 @@ Get immediate access to medical services, emergency exits and help desks.
 
 </div>
 
-</div>
+</article>
 
 <!-- Emergency Exit -->
 
-<div class="emergency-card">
+<article class="emergency-card">
 
-<img src="images/gate.jpg" alt="Emergency Exit">
+<img
+src="images/gate.jpg"
+alt="Emergency Exit">
 
 <h2>🚪 Emergency Exit</h2>
 
@@ -120,13 +135,17 @@ Get immediate access to medical services, emergency exits and help desks.
 
 <div class="button-group">
 
-<button onclick="showEmergency('exit')">
+<button
+onclick="showEmergency('exit')"
+aria-label="View emergency exit details">
 
 📋 Details
 
 </button>
 
-<button onclick="navigateEmergency('Gate 2')">
+<button
+onclick="navigateEmergency('Gate 2')"
+aria-label="Navigate to Emergency Exit">
 
 🧭 Navigate
 
@@ -134,13 +153,15 @@ Get immediate access to medical services, emergency exits and help desks.
 
 </div>
 
-</div>
+</article>
 
 <!-- Help Desk -->
 
-<div class="emergency-card">
+<article class="emergency-card">
 
-<img src="images/hospital.jpg" alt="Help Desk">
+<img
+src="images/hospital.jpg"
+alt="Emergency Help Desk">
 
 <h2>☎ Emergency Help Desk</h2>
 
@@ -152,13 +173,17 @@ Get immediate access to medical services, emergency exits and help desks.
 
 <div class="button-group">
 
-<button onclick="showEmergency('help')">
+<button
+onclick="showEmergency('help')"
+aria-label="View help desk details">
 
 📋 Details
 
 </button>
 
-<button onclick="callHelp()">
+<button
+onclick="callHelp()"
+aria-label="Call emergency help desk">
 
 📞 Call
 
@@ -166,17 +191,26 @@ Get immediate access to medical services, emergency exits and help desks.
 
 </div>
 
-</div>
+</article>
 
-</div>
+</section>
 
-<!-- RIGHT SIDE -->
+<!-- Information Panel -->
 
-<div id="emergencyBox">
+<aside
+id="emergencyBox"
+aria-labelledby="emergencyInfoHeading">
 
-<h2>🚑 Emergency Information</h2>
+<h2 id="emergencyInfoHeading">
 
-<img src="images/hospital.jpg" class="info-image" alt="Emergency">
+🚑 Emergency Information
+
+</h2>
+
+<img
+src="images/hospital.jpg"
+class="info-image"
+alt="Emergency Information">
 
 <p>
 
@@ -204,21 +238,27 @@ Select an emergency service to view:
 
 </p>
 
-<button onclick="refreshEmergency()">
+<button
+onclick="refreshEmergency()"
+aria-label="Refresh emergency service status">
 
 🔄 Refresh Status
 
 </button>
 
-</div>
+</aside>
 
 </div>
 
-<!-- ================= FOOTER ================= -->
+</main>
 
 <footer>
 
+<p>
+
 © 2026 StadiumGenie | AI Smart Stadium Assistant
+
+</p>
 
 </footer>
 

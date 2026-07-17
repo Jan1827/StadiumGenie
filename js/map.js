@@ -114,6 +114,12 @@ const locations = {
 };
 
 // ===========================
+// Cached DOM Element
+// ===========================
+
+const infoBox = document.getElementById("infoBox");
+
+// ===========================
 // Show Location Information
 // ===========================
 
@@ -121,21 +127,41 @@ function showInfo(location) {
 
     const data = locations[location];
 
-    // Prevent errors if the location name is wrong
-    if (!data) {
+    if (!data || !infoBox) {
 
-        document.getElementById("infoBox").innerHTML = `
-            <h2>❌ Location Not Found</h2>
-            <p>Please select a valid stadium location.</p>
-        `;
+        if (infoBox) {
 
-        console.error("Location not found:", location);
+            infoBox.innerHTML = `
+                <h2>❌ Location Not Found</h2>
+                <p>Please select a valid stadium location.</p>
+            `;
+
+        }
+
+        console.error(`Location not found: ${location}`);
+
         return;
     }
 
-    document.getElementById("infoBox").innerHTML = `
-        <img src="${data.image}" class="info-image" alt="${data.title}">
+    infoBox.innerHTML = `
+        <img
+            src="${data.image}"
+            class="info-image"
+            alt="${data.title}">
+
         <h2>${data.title}</h2>
+
         <p>${data.info}</p>
     `;
+
+}
+
+// ===========================
+// Export for Jest Testing
+// ===========================
+
+if (typeof module !== "undefined") {
+    module.exports = {
+        showInfo
+    };
 }

@@ -1,5 +1,35 @@
+// ======================================
+// Cached Elements
+// ======================================
+
 const chatBox = document.getElementById("chatBox");
 const input = document.getElementById("question");
+
+// ======================================
+// Add Message to Chat
+// ======================================
+
+function addMessage(sender, text, id = null) {
+
+    if (!chatBox) return;
+
+    const message = document.createElement("p");
+
+    if (id) {
+        message.id = id;
+    }
+
+    const senderText = document.createElement("strong");
+    senderText.textContent = `${sender}: `;
+
+    message.appendChild(senderText);
+    message.appendChild(document.createTextNode(text));
+
+    chatBox.appendChild(message);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+}
 
 // ======================================
 // Ask AI
@@ -7,23 +37,17 @@ const input = document.getElementById("question");
 
 window.askAI = async function () {
 
+    if (!input) return;
+
     const message = input.value.trim();
 
     if (!message) return;
 
-    // Show user message
-    chatBox.innerHTML += `
-        <p><b>👤 You:</b> ${message}</p>
-    `;
+    addMessage("👤 You", message);
 
     input.value = "";
 
-    // Loading message
-    chatBox.innerHTML += `
-        <p id="loading"><b>🤖 AI:</b> Thinking...</p>
-    `;
-
-    chatBox.scrollTop = chatBox.scrollHeight;
+    addMessage("🤖 AI", "Thinking...", "loading");
 
     try {
 
@@ -36,39 +60,37 @@ window.askAI = async function () {
             },
 
             body: JSON.stringify({
-                message: message
+                message
             })
 
         });
 
+        if (!response.ok) {
+
+            throw new Error(`Server Error (${response.status})`);
+
+        }
+
         const data = await response.json();
 
-        const loading = document.getElementById("loading");
+        document.getElementById("loading")?.remove();
 
-        if (loading) loading.remove();
+        addMessage("🤖 AI", data.reply);
 
-        chatBox.innerHTML += `
-            <p><b>🤖 AI:</b> ${data.reply}</p>
-        `;
-
-        // Speak AI reply
         speak(data.reply);
-
-        chatBox.scrollTop = chatBox.scrollHeight;
 
     }
 
     catch (error) {
 
-        console.error(error);
+        console.error("Chat Error:", error);
 
-        const loading = document.getElementById("loading");
+        document.getElementById("loading")?.remove();
 
-        if (loading) loading.remove();
-
-        chatBox.innerHTML += `
-            <p><b>🤖 AI:</b> ⚠️ Unable to connect to the StadiumGenie server.</p>
-        `;
+        addMessage(
+            "🤖 AI",
+            "⚠️ Unable to connect to the StadiumGenie server."
+        );
 
     }
 
@@ -95,30 +117,17 @@ window.startVoice = function () {
     const recognition = new SpeechRecognition();
 
     recognition.lang = "en-US";
-
     recognition.continuous = false;
-
     recognition.interimResults = false;
-
     recognition.maxAlternatives = 1;
 
-    input.placeholder = "🎤 Listening... Speak now";
+    input.placeholder = "🎤 Listening...";
 
     recognition.start();
 
-    recognition.onstart = function () {
-
-        console.log("Listening...");
-
-    };
-
     recognition.onresult = function (event) {
 
-        const transcript = event.results[0][0].transcript;
-
-        console.log("Recognized:", transcript);
-
-        input.value = transcript;
+        input.value = event.results[0][0].transcript;
 
         input.placeholder = "Ask anything about the stadium...";
 
@@ -128,40 +137,27 @@ window.startVoice = function () {
 
     recognition.onerror = function (event) {
 
-        console.log("Speech Error:", event.error);
-
         input.placeholder = "Ask anything about the stadium...";
 
-        switch (event.error) {
+        const errors = {
 
-            case "no-speech":
-                alert("🎤 No speech detected.\n\nClick the microphone again and start speaking immediately.");
-                break;
+            "no-speech": "🎤 No speech detected.",
 
-            case "audio-capture":
-                alert("🎤 No microphone detected.");
-                break;
+            "audio-capture": "🎤 No microphone detected.",
 
-            case "not-allowed":
-                alert("🎤 Microphone permission denied.");
-                break;
+            "not-allowed": "🎤 Microphone permission denied.",
 
-            case "network":
-                alert("🌐 Network error while using speech recognition.");
-                break;
+            "network": "🌐 Network error."
 
-            default:
-                alert("Speech Error: " + event.error);
+        };
 
-        }
+        alert(errors[event.error] || `Speech Error: ${event.error}`);
 
     };
 
     recognition.onend = function () {
 
         input.placeholder = "Ask anything about the stadium...";
-
-        console.log("Recognition ended");
 
     };
 
@@ -173,18 +169,15 @@ window.startVoice = function () {
 
 function speak(text) {
 
-    if (!window.speechSynthesis) return;
+    if (!window.speechSynthesis || !text) return;
 
     window.speechSynthesis.cancel();
 
     const speech = new SpeechSynthesisUtterance(text);
 
     speech.lang = "en-US";
-
     speech.rate = 1;
-
     speech.pitch = 1;
-
     speech.volume = 1;
 
     window.speechSynthesis.speak(speech);
@@ -192,15 +185,36 @@ function speak(text) {
 }
 
 // ======================================
-// Press Enter to Send
+// Press Enter
 // ======================================
 
-input.addEventListener("keypress", function (e) {
+if (input) {
 
-    if (e.key === "Enter") {
+    input.addEventListener("keydown", function (event) {
 
-        askAI();
+        if (event.key === "Enter") {
 
-    }
+            event.preventDefault();
 
-});
+            askAI();
+
+        }
+
+    });
+
+}
+
+// ======================================
+// Export for Jest
+// ======================================
+
+if (typeof module !== "undefined") {
+
+    module.exports = {
+
+        addMessage,
+        speak
+
+    };
+
+}
