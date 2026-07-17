@@ -2,15 +2,34 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+app.use(helmet());
 
-// =====================================================
-// Supported Languages
-// =====================================================
+app.use(cors({
+    origin: true,
+    methods: ["GET", "POST"],
+    credentials: false
+}));
+
+app.use(express.json({
+    limit: "20kb"
+}));
+
+const chatLimiter = rateLimit({
+    windowMs: 60 * 1000,
+    max: 20,
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: {
+        reply: "Too many requests. Please try again in a minute."
+    }
+});
+
+app.use("/chat", chatLimiter);
 
 const supportedLanguages = [
     "English",
@@ -512,11 +531,23 @@ app.post("/chat", async (req, res) => {
 
     const userMessage =
         normalizeText(rawUserMessage);
+        if (
+    typeof rawUserMessage !== "string" ||
+    rawUserMessage.length > 2000
+) {
+    return res.status(400).json({
+        reply: "Message is too long."
+    });
+}
 
+    if (process.env.NODE_ENV !== "production") {
     console.log("--------------------------------");
     console.log("Language:", language);
-    console.log("Original user question:", rawUserMessage);
-
+    console.log(
+        "Original user question:",
+        rawUserMessage
+    );
+}
     if (!userMessage) {
 
         return res.status(400).json({
@@ -565,11 +596,17 @@ app.post("/chat", async (req, res) => {
     }
 
     try {
+      const controller = new AbortController();
+
+const timeout = setTimeout(() => {
+    controller.abort();
+}, 12000);
 
         const response = await fetch(
             "https://openrouter.ai/api/v1/chat/completions",
             {
                 method: "POST",
+                signal: controller.signal,
 
                 headers: {
                     Authorization:
@@ -625,6 +662,7 @@ For immediate emergencies, tell the visitor to contact the nearest stadium staff
 
         const data =
             await response.json();
+            clearTimeout(timeout);
 
         console.log(
             "OpenRouter status:",
@@ -670,6 +708,13 @@ For immediate emergencies, tell the visitor to contact the nearest stadium staff
         });
 
     } catch (error) {
+      if (error.name === "AbortError") {
+
+    return res.status(504).json({
+        reply:
+            "The AI service took too long to respond. Please try again."
+    });
+}
 
         console.error(
             "AI service error:",
@@ -705,9 +750,18 @@ app.get("/", (req, res) => {
 const PORT =
     process.env.PORT || 3000;
 
-app.listen(PORT, () => {
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(
+            `🚀 StadiumGenie Server running on http://localhost:${PORT}`
+        );
+    });
+}
 
-    console.log(
-        `🚀 StadiumGenie Server running on http://localhost:${PORT}`
-    );
-});
+module.exports = {
+    app,
+    normalizeLanguage,
+    normalizeText,
+    containsKeyword,
+    detectIntent
+};
