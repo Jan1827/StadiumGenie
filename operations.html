@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AI-powered stadium operations intelligence for FIFA World Cup 2026."
+    >
+
+    <title>Operations AI | StadiumGenie</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Dashboard CSS gives the common navbar and responsive styling -->
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <!-- Operations CSS contains page-specific styling -->
+    <link rel="stylesheet" href="css/operations.css">
+</head>
+
+<body>
+
+    <a href="#mainContent" class="skip-link">
+        Skip to Main Content
+    </a>
+
+    <!-- Navigation -->
+
+    <nav class="navbar" aria-label="Main Navigation">
+
+        <div class="logo">
+            🏟 StadiumGenie
+        </div>
+
+        <ul>
+            <li>
+                <a href="dashboard.html">🏠 Dashboard</a>
+            </li>
+
+            <li>
+                <a href="map.html">📍 Map</a>
+            </li>
+
+            <li>
+                <a href="chatbot.html">🤖 AI Assistant</a>
+            </li>
+
+            <li>
+                <a
+                    href="operations.html"
+                    aria-current="page"
+                >
+                    🧠 Operations
+                </a>
+            </li>
+
+            <li>
+                <a href="volunteer.html">🙋 Volunteer</a>
+            </li>
+
+            <li>
+                <a href="sustainability.html">🌱 Sustainability</a>
+            </li>
+
+            <li>
+                <a href="parking.html">🚗 Parking</a>
+            </li>
+
+            <li>
+                <a href="food.html">🍔 Food</a>
+            </li>
+
+            <li>
+                <a href="schedule.html">📅 Schedule</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <!-- Page Header -->
+
+    <header>
+
+        <h1>🧠 AI Operations Intelligence</h1>
+
+        <p>
+            Generative AI-powered operational insights for stadium staff
+            and organizers.
+        </p>
+
+    </header>
+
+    <main id="mainContent">
+
+        <section aria-labelledby="operationsHeading">
+
+            <h2
+                id="operationsHeading"
+                class="section-title"
+            >
+                📊 Live Operational Predictions
+            </h2>
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <h2>👥 Crowd Prediction</h2>
+
+                    <p
+                        id="crowdPrediction"
+                        aria-live="polite"
+                    >
+                        Loading...
+                    </p>
+
+                </article>
+
+                <article class="card">
+
+                    <h2>🚗 Parking Prediction</h2>
+
+                    <p
+                        id="parkingPrediction"
+                        aria-live="polite"
+                    >
+                        Loading...
+                    </p>
+
+                </article>
+
+                <article class="card">
+
+                    <h2>🍔 Food Queue</h2>
+
+                    <p
+                        id="foodPrediction"
+                        aria-live="polite"
+                    >
+                        Loading...
+                    </p>
+
+                </article>
+
+                <article class="card">
+
+                    <h2>🌦 Weather Impact</h2>
+
+                    <p
+                        id="weatherPrediction"
+                        aria-live="polite"
+                    >
+                        Loading...
+                    </p>
+
+                </article>
+
+                <article class="card">
+
+                    <h2>🚇 Transport</h2>
+
+                    <p
+                        id="transportPrediction"
+                        aria-live="polite"
+                    >
+                        Loading...
+                    </p>
+
+                </article>
+
+                <article class="card">
+
+                    <h2>♿ Accessibility</h2>
+
+                    <p
+                        id="accessibilityPrediction"
+                        aria-live="polite"
+                    >
+                        Loading...
+                    </p>
+
+                </article>
+
+                <article class="card">
+
+                    <h2>🚨 Safety Alert</h2>
+
+                    <p
+                        id="safetyPrediction"
+                        aria-live="polite"
+                    >
+                        Loading...
+                    </p>
+
+                </article>
+
+                <article class="card ai-summary-card">
+
+                    <h2>🧠 AI Summary</h2>
+
+                    <p
+                        id="summaryPrediction"
+                        aria-live="polite"
+                        style="white-space: pre-line;"
+                    >
+                        Click the button below to generate an AI report.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <div class="report-button-container">
+
+            <button
+                id="generateReportButton"
+                type="button"
+            >
+                🔄 Generate AI Report
+            </button>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <p>
+            © 2026 StadiumGenie | AI Smart Stadium Assistant
+        </p>
+
+    </footer>
+
+    <script src="js/operations.js"></script>
+
+</body>
+
+</html>

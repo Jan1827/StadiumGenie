@@ -1,6 +1,4 @@
-// ============================
-// Weather Status
-// ============================
+
 
 const weatherList = [
     "☀️ 31°C Sunny",
@@ -10,9 +8,43 @@ const weatherList = [
     "🌥 28°C Cloudy"
 ];
 
-const weatherElement = document.getElementById("weatherText");
+const crowdList = [
+    "🟢 Low",
+    "🟡 Moderate",
+    "🔴 Heavy"
+];
+
+
+
+function getWeatherElement() {
+    return (typeof document !== "undefined")
+        ? document.getElementById("weatherText")
+        : null;
+}
+
+function getCrowdElement() {
+    return (typeof document !== "undefined")
+        ? document.getElementById("crowdText")
+        : null;
+}
+
+function getDateElement() {
+    return (typeof document !== "undefined")
+        ? document.getElementById("currentDate")
+        : null;
+}
+
+function getTimeElement() {
+    return (typeof document !== "undefined")
+        ? document.getElementById("currentTime")
+        : null;
+}
+
+
 
 function updateWeather() {
+
+    const weatherElement = getWeatherElement();
 
     if (!weatherElement) return;
 
@@ -22,24 +54,10 @@ function updateWeather() {
 
 }
 
-updateWeather();
-
-setInterval(updateWeather, 10000);
-
-
-// ============================
-// Crowd Status
-// ============================
-
-const crowdList = [
-    "🟢 Low",
-    "🟡 Moderate",
-    "🔴 Heavy"
-];
-
-const crowdElement = document.getElementById("crowdText");
 
 function updateCrowd() {
+
+    const crowdElement = getCrowdElement();
 
     if (!crowdElement) return;
 
@@ -49,19 +67,11 @@ function updateCrowd() {
 
 }
 
-updateCrowd();
-
-setInterval(updateCrowd, 12000);
-
-
-// ============================
-// Current Date & Time
-// ============================
-
-const dateElement = document.getElementById("currentDate");
-const timeElement = document.getElementById("currentTime");
 
 function updateDateTime() {
+
+    const dateElement = getDateElement();
+    const timeElement = getTimeElement();
 
     const now = new Date();
 
@@ -75,6 +85,24 @@ function updateDateTime() {
 
 }
 
-updateDateTime();
 
-setInterval(updateDateTime, 1000);
+if (typeof document !== "undefined") {
+
+    updateWeather();
+    updateCrowd();
+    updateDateTime();
+
+    setInterval(updateWeather, 10000);
+    setInterval(updateCrowd, 12000);
+    setInterval(updateDateTime, 1000);
+
+}
+
+
+if (typeof module !== "undefined") {
+    module.exports = {
+        updateWeather,
+        updateCrowd,
+        updateDateTime
+    };
+}

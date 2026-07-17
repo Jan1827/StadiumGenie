@@ -1,6 +1,3 @@
-// =====================================
-// Emergency Data
-// =====================================
 
 const emergencyData = {
 
@@ -65,21 +62,19 @@ const emergencyData = {
 
 };
 
-// =====================================
-// Cached Element
-// =====================================
-
-const emergencyBox = document.getElementById("emergencyBox");
-
-// =====================================
-// Show Emergency Details
-// =====================================
+function getEmergencyBox() {
+    return document.getElementById("emergencyBox");
+}
 
 function showEmergency(type) {
 
     const data = emergencyData[type];
+    const emergencyBox = getEmergencyBox();
 
-    if (!data || !emergencyBox) return;
+    if (!data || !emergencyBox) {
+        console.error(`Emergency type not found: ${type}`);
+        return;
+    }
 
     emergencyBox.innerHTML = `
         <img
@@ -98,11 +93,9 @@ function showEmergency(type) {
 
 }
 
-// =====================================
-// Navigation
-// =====================================
-
 function navigateEmergency(destination) {
+
+    const emergencyBox = getEmergencyBox();
 
     if (!emergencyBox) return;
 
@@ -142,10 +135,6 @@ function navigateEmergency(destination) {
     `;
 
 }
-
-// =====================================
-// Emergency Call (Demo)
-// =====================================
 
 function callHelp() {
 

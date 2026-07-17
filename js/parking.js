@@ -1,6 +1,4 @@
-// ===========================
-// Parking Information
-// ===========================
+
 
 const parkingData = {
 
@@ -45,21 +43,19 @@ const parkingData = {
 
 };
 
-// ===========================
-// Cached DOM Element
-// ===========================
-
-const infoBox = document.getElementById("infoBox");
-
-// ===========================
-// Show Parking Details
-// ===========================
+function getInfoBox() {
+    return document.getElementById("infoBox");
+}
 
 function showDetails(zone) {
 
     const data = parkingData[zone];
+    const infoBox = getInfoBox();
 
-    if (!data || !infoBox) return;
+    if (!data || !infoBox) {
+        console.error(`Parking zone not found: ${zone}`);
+        return;
+    }
 
     infoBox.innerHTML = `
         <img
@@ -78,9 +74,7 @@ function showDetails(zone) {
 
 }
 
-// ===========================
-// Navigation
-// ===========================
+
 
 function navigateTo(zone) {
 

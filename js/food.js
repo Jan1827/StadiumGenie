@@ -72,21 +72,19 @@ const restaurants = {
 
 };
 
-// ===============================
-// Cached Element
-// ===============================
-
-const menuBox = document.getElementById("menuBox");
-
-// ===============================
-// Show Restaurant Menu
-// ===============================
+function getMenuBox() {
+    return document.getElementById("menuBox");
+}
 
 function showMenu(place) {
 
     const data = restaurants[place];
+    const menuBox = getMenuBox();
 
-    if (!data || !menuBox) return;
+    if (!data || !menuBox) {
+        console.error(`Restaurant not found: ${place}`);
+        return;
+    }
 
     menuBox.innerHTML = `
         <img
@@ -104,12 +102,9 @@ function showMenu(place) {
     `;
 
 }
-
-// ===============================
-// Navigation
-// ===============================
-
 function navigateFood(location) {
+
+    const menuBox = getMenuBox();
 
     if (!menuBox) return;
 
@@ -149,10 +144,6 @@ function navigateFood(location) {
     `;
 
 }
-
-// ===============================
-// Refresh Restaurant Status
-// ===============================
 
 function refreshRestaurants() {
 

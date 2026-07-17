@@ -22,7 +22,6 @@ An AI-powered web application that enhances the stadium experience through smart
 
 **🔗 Live Application:** Coming Soon
 
-**🎥 Demo Video:** Coming Soon
 
 ---
 

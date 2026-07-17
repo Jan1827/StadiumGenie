@@ -1,6 +1,4 @@
-// =====================================
-// Match Data
-// =====================================
+
 
 const matches = {
 
@@ -48,21 +46,19 @@ const matches = {
 
 };
 
-// =====================================
-// Cached Element
-// =====================================
-
-const matchBox = document.getElementById("matchBox");
-
-// =====================================
-// Show Match Details
-// =====================================
+function getMatchBox() {
+    return document.getElementById("matchBox");
+}
 
 function showMatch(team) {
 
     const data = matches[team];
+    const matchBox = getMatchBox();
 
-    if (!data || !matchBox) return;
+    if (!data || !matchBox) {
+        console.error(`Match not found: ${team}`);
+        return;
+    }
 
     matchBox.innerHTML = `
         <img
@@ -81,11 +77,9 @@ function showMatch(team) {
 
 }
 
-// =====================================
-// Navigation Information
-// =====================================
-
 function navigateMatch(destination) {
+
+    const matchBox = getMatchBox();
 
     if (!matchBox) return;
 
@@ -129,10 +123,6 @@ function navigateMatch(destination) {
     `;
 
 }
-
-// =====================================
-// Refresh Schedule
-// =====================================
 
 function refreshMatches() {
 

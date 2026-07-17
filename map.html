@@ -3,274 +3,1057 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<meta name="description"
-content="Explore the interactive stadium map to locate gates, parking, food courts, metro stations and emergency services with StadiumGenie.">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>🗺 StadiumGenie | Interactive Stadium Map</title>
+    <meta
+        name="description"
+        content="Explore the StadiumGenie interactive stadium map with live AI crowd heatmap, gate congestion predictions, parking, food courts and emergency services."
+    >
 
-<link rel="stylesheet" href="css/map.css">
+    <title>
+        AI Crowd Heatmap | StadiumGenie
+    </title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/map.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
 </head>
 
 <body>
 
-<a href="#mainContent" class="skip-link">Skip to Main Content</a>
+    <a href="#mainContent" class="skip-link">
+        Skip to Main Content
+    </a>
 
-<!-- Navigation -->
+    <!-- Navigation -->
 
-<nav aria-label="Main Navigation">
+    <nav aria-label="Main Navigation">
 
-<div class="logo">
-🏟 StadiumGenie
-</div>
+        <div class="logo">
+            🏟 StadiumGenie
+        </div>
 
-<ul>
+        <ul>
 
-<li><a href="dashboard.html">🏠 Dashboard</a></li>
-<li><a href="chatbot.html">🤖 AI Assistant</a></li>
-<li><a href="parking.html">🚗 Parking</a></li>
-<li><a href="food.html">🍔 Food Finder</a></li>
-<li><a href="schedule.html">📅 Schedule</a></li>
+            <li>
+                <a href="dashboard.html">
+                    🏠 Dashboard
+                </a>
+            </li>
 
-</ul>
+            <li>
+                <a href="chatbot.html">
+                    🤖 AI Assistant
+                </a>
+            </li>
 
-</nav>
+            <li>
+                <a href="parking.html">
+                    🚗 Parking
+                </a>
+            </li>
 
-<!-- Header -->
+            <li>
+                <a href="food.html">
+                    🍔 Food Finder
+                </a>
+            </li>
 
-<header>
+            <li>
+                <a href="schedule.html">
+                    📅 Schedule
+                </a>
+            </li>
 
-<h1>🗺 Interactive Stadium Map</h1>
+        </ul>
 
-<p>
+    </nav>
 
-Click any location below to explore gates, parking, food courts,
-metro station and emergency services.
+    <!-- Header -->
 
-</p>
+    <header>
 
-<a
-href="dashboard.html"
-class="back-btn"
-aria-label="Back to Dashboard">
+        <p class="header-label">
+            Live Stadium Intelligence
+        </p>
 
-← Back to Dashboard
+        <h1>
+            🗺 AI Crowd Heatmap
+        </h1>
 
-</a>
+        <p class="header-description">
+            Monitor live crowd density, discover the least crowded
+            entrance and receive AI-powered congestion predictions.
+        </p>
 
-</header>
+        <a
+            href="dashboard.html"
+            class="back-btn"
+            aria-label="Back to Dashboard"
+        >
+            ← Back to Dashboard
+        </a>
 
-<main id="mainContent">
+    </header>
 
-<div class="map-container">
+    <main id="mainContent">
 
-<!-- Left Section -->
+        <!-- Live Crowd Overview -->
+
+        <section
+            class="crowd-dashboard"
+            aria-labelledby="crowdDashboardHeading"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-label">
+                        Real-Time Monitoring
+                    </p>
+
+                    <h2 id="crowdDashboardHeading">
+                        👥 Live Crowd Overview
+                    </h2>
+
+                </div>
+
+                <div
+                    class="live-update"
+                    aria-live="polite"
+                >
+
+                    <span
+                        class="live-dot"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span id="lastUpdated">
+                        Live data active
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="crowd-summary-grid">
+
+                <article class="summary-card">
+
+                    <span class="summary-icon">
+                        👥
+                    </span>
+
+                    <div>
+
+                        <p>Average Crowd</p>
+
+                        <strong id="averageCrowd">
+                            62%
+                        </strong>
+
+                    </div>
+
+                </article>
+
+                <article class="summary-card">
+
+                    <span class="summary-icon">
+                        🚪
+                    </span>
+
+                    <div>
+
+                        <p>Recommended Gate</p>
+
+                        <strong id="recommendedGate">
+                            Gate 1
+                        </strong>
+
+                    </div>
+
+                </article>
+
+                <article class="summary-card">
+
+                    <span class="summary-icon">
+                        ⚠️
+                    </span>
+
+                    <div>
+
+                        <p>Highest Congestion</p>
+
+                        <strong id="highestCongestion">
+                            Gate 3
+                        </strong>
+
+                    </div>
+
+                </article>
+
+                <article class="summary-card">
+
+                    <span class="summary-icon">
+                        🔄
+                    </span>
+
+                    <div>
+
+                        <p>Next Update</p>
+
+                        <strong id="updateCountdown">
+                            10 seconds
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Alert Panel -->
+
+        <section
+            id="crowdAlert"
+            class="crowd-alert"
+            aria-live="assertive"
+        >
+
+            <div class="alert-icon">
+                ⚠️
+            </div>
+
+            <div>
+
+                <h2 id="alertTitle">
+                    Crowd Monitoring Active
+                </h2>
+
+                <p id="alertMessage">
+                    StadiumGenie is analysing all entrance gates.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Main Map Layout -->
+
+        <div class="map-container">
+
+            <!-- Left Section -->
+
+            <section
+                class="stadium-image-container"
+                aria-labelledby="stadiumHeading"
+            >
+
+                <div class="map-title-row">
+
+                    <div>
+
+                        <p class="section-label">
+                            Interactive Map
+                        </p>
+
+                        <h2 id="stadiumHeading">
+                            🏟 Football Stadium
+                        </h2>
+
+                    </div>
+
+                    <!-- Heatmap Legend -->
+
+                    <div
+                        class="heatmap-legend"
+                        aria-label="Crowd density legend"
+                    >
+
+                        <span>
+                            <i class="legend-dot crowd-low"></i>
+                            Low
+                        </span>
+
+                        <span>
+                            <i class="legend-dot crowd-moderate"></i>
+                            Moderate
+                        </span>
+
+                        <span>
+                            <i class="legend-dot crowd-high"></i>
+                            High
+                        </span>
+
+                        <span>
+                            <i class="legend-dot crowd-critical"></i>
+                            Critical
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- Stadium Heatmap -->
+
+                <div class="stadium-heatmap">
+
+                    <img
+                        src="images/stadium.jpg"
+                        class="stadium-image"
+                        alt="Football stadium with live crowd heatmap markers"
+                    >
+
+                    <button
+                        type="button"
+                        id="gate1Marker"
+                        class="heatmap-marker gate-one-marker"
+                        data-location="Gate 1"
+                        aria-label="Gate 1 crowd density"
+                    >
+                        <span>Gate 1</span>
+                        <strong id="gate1MarkerValue">42%</strong>
+                    </button>
+
+                    <button
+                        type="button"
+                        id="gate2Marker"
+                        class="heatmap-marker gate-two-marker"
+                        data-location="Gate 2"
+                        aria-label="Gate 2 crowd density"
+                    >
+                        <span>Gate 2</span>
+                        <strong id="gate2MarkerValue">68%</strong>
+                    </button>
+
+                    <button
+                        type="button"
+                        id="gate3Marker"
+                        class="heatmap-marker gate-three-marker"
+                        data-location="Gate 3"
+                        aria-label="Gate 3 crowd density"
+                    >
+                        <span>Gate 3</span>
+                        <strong id="gate3MarkerValue">84%</strong>
+                    </button>
+
+                    <button
+                        type="button"
+                        id="gate4Marker"
+                        class="heatmap-marker gate-four-marker"
+                        data-location="Gate 4"
+                        aria-label="Gate 4 crowd density"
+                    >
+                        <span>Gate 4</span>
+                        <strong id="gate4MarkerValue">55%</strong>
+                    </button>
+
+                </div>
+
+                <!-- Gate Crowd Cards -->
+
+                <div class="gate-heatmap-grid">
+
+                    <article
+                        id="gate1CrowdCard"
+                        class="gate-crowd-card"
+                    >
+
+                        <div class="gate-card-top">
+
+                            <div>
+
+                                <span class="gate-name">
+                                    🚪 Gate 1
+                                </span>
+
+                                <span
+                                    id="gate1Status"
+                                    class="crowd-status"
+                                >
+                                    Low
+                                </span>
+
+                            </div>
+
+                            <strong id="gate1Value">
+                                42%
+                            </strong>
+
+                        </div>
+
+                        <div
+                            class="crowd-progress"
+                            aria-label="Gate 1 crowd density"
+                        >
+                            <div
+                                id="gate1Progress"
+                                class="crowd-progress-fill"
+                                style="width: 42%;"
+                            ></div>
+                        </div>
+
+                        <p id="gate1Recommendation">
+                            Recommended for quick entry.
+                        </p>
+
+                    </article>
+
+                    <article
+                        id="gate2CrowdCard"
+                        class="gate-crowd-card"
+                    >
+
+                        <div class="gate-card-top">
+
+                            <div>
+
+                                <span class="gate-name">
+                                    ⭐ Gate 2
+                                </span>
+
+                                <span
+                                    id="gate2Status"
+                                    class="crowd-status"
+                                >
+                                    Moderate
+                                </span>
+
+                            </div>
+
+                            <strong id="gate2Value">
+                                68%
+                            </strong>
+
+                        </div>
+
+                        <div
+                            class="crowd-progress"
+                            aria-label="Gate 2 crowd density"
+                        >
+                            <div
+                                id="gate2Progress"
+                                class="crowd-progress-fill"
+                                style="width: 68%;"
+                            ></div>
+                        </div>
+
+                        <p id="gate2Recommendation">
+                            Moderate waiting time expected.
+                        </p>
+
+                    </article>
+
+                    <article
+                        id="gate3CrowdCard"
+                        class="gate-crowd-card"
+                    >
+
+                        <div class="gate-card-top">
+
+                            <div>
+
+                                <span class="gate-name">
+                                    🚪 Gate 3
+                                </span>
+
+                                <span
+                                    id="gate3Status"
+                                    class="crowd-status"
+                                >
+                                    High
+                                </span>
+
+                            </div>
+
+                            <strong id="gate3Value">
+                                84%
+                            </strong>
+
+                        </div>
+
+                        <div
+                            class="crowd-progress"
+                            aria-label="Gate 3 crowd density"
+                        >
+                            <div
+                                id="gate3Progress"
+                                class="crowd-progress-fill"
+                                style="width: 84%;"
+                            ></div>
+                        </div>
+
+                        <p id="gate3Recommendation">
+                            Consider using another entrance.
+                        </p>
+
+                    </article>
+
+                    <article
+                        id="gate4CrowdCard"
+                        class="gate-crowd-card"
+                    >
+
+                        <div class="gate-card-top">
+
+                            <div>
+
+                                <span class="gate-name">
+                                    🚪 Gate 4
+                                </span>
+
+                                <span
+                                    id="gate4Status"
+                                    class="crowd-status"
+                                >
+                                    Moderate
+                                </span>
+
+                            </div>
+
+                            <strong id="gate4Value">
+                                55%
+                            </strong>
+
+                        </div>
+
+                        <div
+                            class="crowd-progress"
+                            aria-label="Gate 4 crowd density"
+                        >
+                            <div
+                                id="gate4Progress"
+                                class="crowd-progress-fill"
+                                style="width: 55%;"
+                            ></div>
+                        </div>
+
+                        <p id="gate4Recommendation">
+                            Entry conditions are currently stable.
+                        </p>
+
+                    </article>
+
+                </div>
+
+                <!-- AI Prediction -->
+
+                <section
+                    class="ai-prediction-card"
+                    aria-labelledby="predictionHeading"
+                >
+
+                    <div class="prediction-icon">
+                        🧠
+                    </div>
+
+                    <div class="prediction-content">
+
+                        <p class="section-label">
+                            AI Prediction
+                        </p>
+
+                        <h2 id="predictionHeading">
+                            Crowd Forecast
+                        </h2>
+
+                        <p id="predictionMessage">
+                            Gate 3 may reach critical crowd capacity
+                            within the next 15 minutes.
+                        </p>
+
+                        <div class="confidence-row">
+
+                            <span>
+                                Prediction confidence
+                            </span>
+
+                            <strong id="predictionConfidence">
+                                87%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+                <!-- AI Crowd Route Optimizer -->
 
 <section
-class="stadium-image-container"
-aria-labelledby="stadiumHeading">
+    class="route-optimizer"
+    aria-labelledby="routeOptimizerHeading"
+>
 
-<h2 id="stadiumHeading">
+    <div class="route-optimizer-header">
 
-🏟 Football Stadium
+        <div>
+            <p class="section-label">
+                Smart Navigation
+            </p>
 
-</h2>
+            <h2 id="routeOptimizerHeading">
+                🧭 AI Crowd Route Optimizer
+            </h2>
 
-<img
-src="images/stadium.jpg"
-class="stadium-image"
-alt="Interactive view of the football stadium">
+            <p>
+                Find the fastest and safest stadium route using
+                live crowd-density data.
+            </p>
+        </div>
 
-<!-- Location Cards -->
+        <span class="optimizer-badge">
+            AI Powered
+        </span>
 
-<div class="location-grid">
+    </div>
 
-<article
-class="location-card"
-onclick="showInfo('Gate 1')"
-tabindex="0"
-role="button"
-aria-label="View information for Gate 1">
+    <form id="routeOptimizerForm">
 
-<img src="images/gate.jpg" alt="Gate 1">
+        <div class="route-form-grid">
 
-<h3>🚪 Gate 1</h3>
+            <div class="route-field">
 
-</article>
+                <label for="startLocation">
+                    Starting Location
+                </label>
 
-<article
-class="location-card"
-onclick="showInfo('Gate 2')"
-tabindex="0"
-role="button"
-aria-label="View information for Gate 2">
+                <select id="startLocation" required>
 
-<img src="images/gate.jpg" alt="Gate 2">
+                    <option value="">
+                        Select starting point
+                    </option>
 
-<h3>⭐ Gate 2</h3>
+                    <option value="Metro">
+                        Metro Station
+                    </option>
 
-</article>
+                    <option value="Parking A">
+                        Parking Zone A
+                    </option>
 
-<article
-class="location-card"
-onclick="showInfo('Gate 3')"
-tabindex="0"
-role="button"
-aria-label="View information for Gate 3">
+                    <option value="Parking B">
+                        Parking Zone B
+                    </option>
 
-<img src="images/gate.jpg" alt="Gate 3">
+                    <option value="Gate 1">
+                        Gate 1
+                    </option>
 
-<h3>🚪 Gate 3</h3>
+                    <option value="Gate 2">
+                        Gate 2
+                    </option>
 
-</article>
+                    <option value="Gate 3">
+                        Gate 3
+                    </option>
 
-<article
-class="location-card"
-onclick="showInfo('Gate 4')"
-tabindex="0"
-role="button"
-aria-label="View information for Gate 4">
+                    <option value="Gate 4">
+                        Gate 4
+                    </option>
 
-<img src="images/gate.jpg" alt="Gate 4">
+                </select>
 
-<h3>🚪 Gate 4</h3>
+            </div>
 
-</article>
+            <div class="route-field">
 
-<article
-class="location-card"
-onclick="showInfo('Parking A')"
-tabindex="0"
-role="button"
-aria-label="View Parking A">
+                <label for="destinationLocation">
+                    Destination
+                </label>
 
-<img src="images/parking.jpg" alt="Parking A">
+                <select id="destinationLocation" required>
 
-<h3>🚗 Parking A</h3>
+                    <option value="">
+                        Select destination
+                    </option>
 
-</article>
+                    <option value="Gate 1">
+                        Gate 1
+                    </option>
 
-<article
-class="location-card"
-onclick="showInfo('Parking B')"
-tabindex="0"
-role="button"
-aria-label="View Parking B">
+                    <option value="Gate 2">
+                        Gate 2
+                    </option>
 
-<img src="images/parking.jpg" alt="Parking B">
+                    <option value="Gate 3">
+                        Gate 3
+                    </option>
 
-<h3>🚗 Parking B</h3>
+                    <option value="Gate 4">
+                        Gate 4
+                    </option>
 
-</article>
+                    <option value="Food Court A">
+                        Food Court A
+                    </option>
 
-<article
-class="location-card"
-onclick="showInfo('Food Court A')"
-tabindex="0"
-role="button"
-aria-label="View Food Court A">
+                    <option value="Food Court B">
+                        Food Court B
+                    </option>
 
-<img src="images/food.jpg" alt="Food Court A">
+                    <option value="Medical">
+                        Medical Center
+                    </option>
 
-<h3>🍔 Food Court A</h3>
+                    <option value="Metro">
+                        Metro Station
+                    </option>
 
-</article>
+                </select>
 
-<article
-class="location-card"
-onclick="showInfo('Food Court B')"
-tabindex="0"
-role="button"
-aria-label="View Food Court B">
+            </div>
 
-<img src="images/food.jpg" alt="Food Court B">
+            <div class="route-field">
 
-<h3>🍕 Food Court B</h3>
+                <label for="routePriority">
+                    Route Priority
+                </label>
 
-</article>
+                <select id="routePriority">
 
-<article
-class="location-card"
-onclick="showInfo('Medical')"
-tabindex="0"
-role="button"
-aria-label="View Medical Center">
+                    <option value="fastest">
+                        Fastest Route
+                    </option>
 
-<img src="images/hospital.jpg" alt="Medical Center">
+                    <option value="least-crowded">
+                        Least Crowded Route
+                    </option>
 
-<h3>🏥 Medical Center</h3>
+                    <option value="accessible">
+                        Wheelchair Accessible
+                    </option>
 
-</article>
+                </select>
 
-<article
-class="location-card"
-onclick="showInfo('Metro')"
-tabindex="0"
-role="button"
-aria-label="View Metro Station">
+            </div>
 
-<img src="images/metro.jpg" alt="Metro Station">
+        </div>
 
-<h3>🚇 Metro Station</h3>
+        <label class="accessibility-option">
 
-</article>
+            <input
+                type="checkbox"
+                id="avoidCrowds"
+                checked
+            >
 
-</div>
+            <span>
+                Avoid highly congested areas
+            </span>
+
+        </label>
+
+        <button
+            type="submit"
+            class="optimize-route-btn"
+        >
+            🧠 Optimize My Route
+        </button>
+
+    </form>
+
+    <div
+        id="routeResult"
+        class="route-result route-result-hidden"
+        aria-live="polite"
+    >
+
+        <div class="route-result-heading">
+
+            <div>
+                <p class="section-label">
+                    Recommended Route
+                </p>
+
+                <h3 id="routeTitle">
+                    Best route calculated
+                </h3>
+            </div>
+
+            <span id="routeStatusBadge">
+                Low Crowd
+            </span>
+
+        </div>
+
+        <div
+            id="routeSteps"
+            class="route-steps"
+        ></div>
+
+        <div class="route-metrics">
+
+            <div>
+                <span>Estimated Time</span>
+                <strong id="routeTime">0 min</strong>
+            </div>
+
+            <div>
+                <span>Walking Distance</span>
+                <strong id="routeDistance">0 m</strong>
+            </div>
+
+            <div>
+                <span>Crowd Exposure</span>
+                <strong id="routeCrowd">Low</strong>
+            </div>
+
+            <div>
+                <span>Time Saved</span>
+                <strong id="routeSavings">0 min</strong>
+            </div>
+
+        </div>
+
+        <p
+            id="routeExplanation"
+            class="route-explanation"
+        ></p>
+
+    </div>
 
 </section>
 
-<!-- Information Panel -->
+                <!-- Location Cards -->
 
-<aside
-id="infoBox"
-aria-labelledby="infoHeading"
-aria-live="polite">
+                <div class="location-grid">
 
-<h2 id="infoHeading">
+                    <article
+                        class="location-card"
+                        data-location="Gate 1"
+                        tabindex="0"
+                        role="button"
+                        aria-label="View information for Gate 1"
+                    >
 
-📍 Location Information
+                        <img
+                            src="images/gate.jpg"
+                            alt="Gate 1"
+                        >
 
-</h2>
+                        <h3>🚪 Gate 1</h3>
 
-<img
-src="images/stadium.jpg"
-class="info-image"
-alt="Selected stadium location">
+                    </article>
 
-<p>
+                    <article
+                        class="location-card"
+                        data-location="Gate 2"
+                        tabindex="0"
+                        role="button"
+                        aria-label="View information for Gate 2"
+                    >
 
-Click any location card to view detailed information.
+                        <img
+                            src="images/gate.jpg"
+                            alt="Gate 2"
+                        >
 
-<br><br>
+                        <h3>⭐ Gate 2</h3>
 
-The selected location image and description will appear here.
+                    </article>
 
-</p>
+                    <article
+                        class="location-card"
+                        data-location="Gate 3"
+                        tabindex="0"
+                        role="button"
+                        aria-label="View information for Gate 3"
+                    >
 
-</aside>
+                        <img
+                            src="images/gate.jpg"
+                            alt="Gate 3"
+                        >
 
-</div>
+                        <h3>🚪 Gate 3</h3>
 
-</main>
+                    </article>
 
-<footer>
+                    <article
+                        class="location-card"
+                        data-location="Gate 4"
+                        tabindex="0"
+                        role="button"
+                        aria-label="View information for Gate 4"
+                    >
 
-<p>
+                        <img
+                            src="images/gate.jpg"
+                            alt="Gate 4"
+                        >
 
-© 2026 StadiumGenie | AI Smart Stadium Assistant
+                        <h3>🚪 Gate 4</h3>
 
-</p>
+                    </article>
 
-</footer>
+                    <article
+                        class="location-card"
+                        data-location="Parking A"
+                        tabindex="0"
+                        role="button"
+                        aria-label="View Parking A"
+                    >
 
-<script src="js/map.js"></script>
+                        <img
+                            src="images/parking.jpg"
+                            alt="Parking A"
+                        >
+
+                        <h3>🚗 Parking A</h3>
+
+                    </article>
+
+                    <article
+                        class="location-card"
+                        data-location="Parking B"
+                        tabindex="0"
+                        role="button"
+                        aria-label="View Parking B"
+                    >
+
+                        <img
+                            src="images/parking.jpg"
+                            alt="Parking B"
+                        >
+
+                        <h3>🚗 Parking B</h3>
+
+                    </article>
+
+                    <article
+                        class="location-card"
+                        data-location="Food Court A"
+                        tabindex="0"
+                        role="button"
+                        aria-label="View Food Court A"
+                    >
+
+                        <img
+                            src="images/food.jpg"
+                            alt="Food Court A"
+                        >
+
+                        <h3>🍔 Food Court A</h3>
+
+                    </article>
+
+                    <article
+                        class="location-card"
+                        data-location="Food Court B"
+                        tabindex="0"
+                        role="button"
+                        aria-label="View Food Court B"
+                    >
+
+                        <img
+                            src="images/food.jpg"
+                            alt="Food Court B"
+                        >
+
+                        <h3>🍕 Food Court B</h3>
+
+                    </article>
+
+                    <article
+                        class="location-card"
+                        data-location="Medical"
+                        tabindex="0"
+                        role="button"
+                        aria-label="View Medical Center"
+                    >
+
+                        <img
+                            src="images/hospital.jpg"
+                            alt="Medical Center"
+                        >
+
+                        <h3>🏥 Medical Center</h3>
+
+                    </article>
+
+                    <article
+                        class="location-card"
+                        data-location="Metro"
+                        tabindex="0"
+                        role="button"
+                        aria-label="View Metro Station"
+                    >
+
+                        <img
+                            src="images/metro.jpg"
+                            alt="Metro Station"
+                        >
+
+                        <h3>🚇 Metro Station</h3>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- Information Panel -->
+
+            <aside
+                id="infoBox"
+                aria-labelledby="infoHeading"
+                aria-live="polite"
+            >
+
+                <h2 id="infoHeading">
+                    📍 Location Information
+                </h2>
+
+                <img
+                    id="infoImage"
+                    src="images/stadium.jpg"
+                    class="info-image"
+                    alt="Selected stadium location"
+                >
+
+                <p id="infoDescription">
+                    Click any location card or heatmap gate marker
+                    to view detailed information.
+                    <br><br>
+                    The selected location image, crowd status and
+                    description will appear here.
+                </p>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <p>
+            © 2026 StadiumGenie | AI Smart Stadium Assistant
+        </p>
+
+    </footer>
+
+    <script src="js/map.js"></script>
 
 </body>
 
